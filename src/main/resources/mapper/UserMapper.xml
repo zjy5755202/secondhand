@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserDao">
+    <insert id="addUser" parameterType="User">
+        INSERT INTO user(userId,userName,userPassword,loginName,img)
+        VALUES (#{userId},#{userName}, #{userPassword}, #{loginName}, #{img})
+    </insert>
+
+
+    <update id="updateUser" parameterType="User">
+        UPDATE user
+        SET userName = #{userName},userPassword = #{userPassword},loginName = #{loginName},img = #{img}
+        WHERE  userId = #{userId}
+    </update>
+
+    <select id="queryById" resultType="User" parameterType="long">
+        SELECT *
+        FROM user
+        WHERE userid=#{userid}
+    </select>
+<!--    <resultMap type="user" id="userResultMap" >-->
+<!--        <id property="userId" column="Id"/>-->
+<!--        <result property="userName" column="name"/>-->
+<!--        <result property="userPassword" column="number"/>-->
+<!--        <result property="paperDetail" column="detail"/>-->
+<!--    </resultMap>-->
+<!--    <select id="queryAllUser" resultMap="userResultMap">-->
+<!--        SELECT userid,username,loginname,img-->
+<!--        FROM user-->
+<!--    </select>-->
+<!--    <select id="queryByUsername" resultType="com.entity.User" parameterType="String">-->
+<!--        SELECT *-->
+<!--        FROM user-->
+<!--        WHERE username=#{username}-->
+<!--    </select>-->
+
+</mapper>
