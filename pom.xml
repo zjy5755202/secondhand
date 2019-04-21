@@ -12,7 +12,6 @@
   <name>secondhand Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -20,7 +19,6 @@
     <spring.version>4.1.9.RELEASE</spring.version>
     <mybatis.version>3.4.4</mybatis.version>
   </properties>
-
   <dependencies>
     <!-- 单元测试 -->
     <dependency>
