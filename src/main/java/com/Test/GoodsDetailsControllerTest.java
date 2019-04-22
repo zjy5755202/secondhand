@@ -1,6 +1,6 @@
 package com.Test;
 
-import com.controller.GoodDetailsController;
+import com.controller.GoodsDetailsController;
 import com.controller.UserController;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -17,18 +17,18 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration({"classpath:spring/spring-dao.xml","classpath:spring/spring-service.xml",
         "classpath:spring/spring-mvc.xml","classpath:spring/spring-redis.xml","classpath:mybatis-config.xml"})
 
-public class GoodDetailControllerTest {
+public class GoodsDetailsControllerTest {
     private MockMvc mockMvc;
     //需要测试的
     @Autowired
-    private GoodDetailsController goodDetailsController;
+    private GoodsDetailsController goodsDetailsController;
     @Autowired
     private WebApplicationContext context;
 
 
     @Before
     public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(goodDetailsController).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(goodsDetailsController).build();
         System.out.println("movkMvc-Initial");
     }
 

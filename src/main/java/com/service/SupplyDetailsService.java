@@ -5,11 +5,11 @@ import com.entity.SupplyDetails;
 
 public interface SupplyDetailsService {
     //增加一个供需
-    int addSupplyDetails(SupplyDetails supply);
+    int addSupplyDetails(SupplyDetails supplyDetails);
     //删除一个供需
-    int deleteSupplyDetailsById(String id);
+    int deleteSupplyDetailsById(String supplyid);
     //更新一个供需
-    int updateSupplyDetails(SupplyDetails supply);
+    int updateSupplyDetails(SupplyDetails supplyDetails);
     //查找一个供需
-    SupplyDetails querySupplyDetailsById(String id);
+    SupplyDetails querySupplyDetailsById(String supplyid);
 }

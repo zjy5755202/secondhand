@@ -5,29 +5,28 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
-public class GoodDetails {
-    private String goodid;
-    private String imgs;
+public class GoodsDetails {
+    private String goodsid;
+    private String images;
     private String description;
     private int collections;
     private String content;
     private Date createAt;
 
-
-    public String getGoodid() {
-        return goodid;
+    public String getGoodsid() {
+        return goodsid;
     }
 
-    public void setGoodid(String goodid) {
-        this.goodid = goodid;
+    public void setGoodsid(String goodsid) {
+        this.goodsid = goodsid;
     }
 
-    public String getImgs() {
-        return imgs;
+    public String getImages() {
+        return images;
     }
 
-    public void setImgs(String imgs) {
-        this.imgs = imgs;
+    public void setImages(String images) {
+        this.images = images;
     }
 
     public String getDescription() {

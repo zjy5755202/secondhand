@@ -4,9 +4,9 @@ package com.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.entity.Good;
+import com.entity.Goods;
 import com.redis.Redis;
-import com.service.GoodService;
+import com.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,56 +18,56 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/Good")
-public class GoodController {
+public class GoodsController {
 
     @Autowired
-    private GoodService goodService;
+    private GoodsService goodsService;
     @Autowired
     private Redis redis;
 
     //根据标题搜索Goods
     @RequestMapping("/queryGoodByTitle")
     @ResponseBody
-    public List<Good> queryGoodByTitle(String title){
-        List<Good> result=goodService.queryGoodByTitle(title);
+    public List<Goods> queryGoodByTitle(String title){
+        List<Goods> result=goodsService.queryGoodsByTitle(title);
         return result;
     }
     //查看某个用户收藏的Goods
     @RequestMapping("/queryUserCollectionGood")
     @ResponseBody
-    public List<Good> queryUserCollectionGood(String uuid){
-        List<Good> result=goodService.queryUserCollectionGood(uuid);
+    public List<Goods> queryUserCollectionGood(String uuid){
+        List<Goods> result=goodsService.queryUserCollectionGoods(uuid);
         return result;
     }
     //查看某个用户发布的Goods
     @RequestMapping("/queryUserPublishGoods")
     @ResponseBody
-    public List<Good> queryUserPublishGoods(String uuid){
-        List<Good> result=goodService.queryUserPublishGoods(uuid);
+    public List<Goods> queryUserPublishGoods(String uuid){
+        List<Goods> result=goodsService.queryUserPublishGoods(uuid);
         return result;
     }
     //根据goodid来搜索Good
     @RequestMapping("/queryGoodById")
     @ResponseBody
-    public Good queryGoodById(String goodid){
-        Good result=goodService.queryGoodById(goodid);
+    public Goods queryGoodById(String goodsid){
+        Goods result=goodsService.queryGoodsById(goodsid);
         return result;
     }
     //删除一个Good
     @RequestMapping("/deleteGood")
-    public void deleteGood(String goodid){
-        goodService.deleteGood(goodid);
+    public void deleteGood(String goodsid){
+        goodsService.deleteGoods(goodsid);
     }
     //上传一个Good
     @RequestMapping("/addGood")
     public void addGood(String jsonstr){
-        Good good = JSON.parseObject(jsonstr, new TypeReference<Good>() {});
-        goodService.addGood(good);
+        Goods good = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
+        goodsService.addGoods(good);
     }
     //更新一个Good
     @RequestMapping("/updateGood")
     public void updateGood(@RequestBody String jsonstr){
-        Good good = JSON.parseObject(jsonstr, new TypeReference<Good>() {});
+        Goods good = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
         String str=JSON.toJSONString(good);
         System.out.println("-------------后端对象--------------");
         System.out.println(str);
@@ -75,8 +75,8 @@ public class GoodController {
     }
     //点开查看详情的时候会调用的，查询这个good的remarks和Details
     @RequestMapping("/queryGoodDetails")
-    public Good queryGoodDetails(String goodid){
-        Good result=goodService.queryGoodDetailsById(goodid);
+    public Goods queryGoodDetails(String goodsid){
+        Goods result=goodsService.queryGoodsDetailsById(goodsid);
         return result;
     }
 

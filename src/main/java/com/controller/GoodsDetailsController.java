@@ -1,25 +1,23 @@
 package com.controller;
 
 
-import com.dao.GoodDetailsDao;
-import com.entity.GoodDetails;
-import com.service.GoodDetailsService;
+import com.entity.GoodsDetails;
+import com.service.GoodsDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.File;
 import java.io.IOException;
 
 @Controller
 @RequestMapping("/GoodDetails")
-public class GoodDetailsController {
+public class GoodsDetailsController {
 
     @Autowired
-    private GoodDetailsService goodDetailsService;
+    private GoodsDetailsService goodsDetailsService;
 
     @RequestMapping("/upload")
-    public String upload(GoodDetails goodDetails) throws IOException {
+    public String upload(GoodsDetails goodDetails) throws IOException {
 //        //保存数据库的路径
 //        String sqlPath = null;
 //        //定义文件保存的本地路径
@@ -50,14 +48,14 @@ public class GoodDetailsController {
 
 
     @RequestMapping("/queryGoodDetailsByid")
-    public GoodDetails queryGoodDetailsByid(String goodid) throws IOException {
-        goodDetailsService.queryGoodDetailsById(goodid);
+    public GoodsDetails queryGoodsDetailsByid(String goodid) throws IOException {
+        goodsDetailsService.queryGoodsDetailsById(goodid);
         return null;
     }
 
     @RequestMapping("/delGoodDetailsByid")
-    public void delGoodDetailsByid(String goodid) throws IOException {
-        goodDetailsService.deleteGoodDetailsById(goodid);
+    public void delGoodsDetailsByid(String goodid) throws IOException {
+        goodsDetailsService.deleteGoodsDetailsById(goodid);
     }
 
 

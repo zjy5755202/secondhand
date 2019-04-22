@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.dao.GoodDao">
+<mapper namespace="com.dao.GoodsDao">
     <resultMap id="GoodList" type="com.entity.Good">
         <id property="userid" column="userid"/>
         <result property="avatar" column="avatar"/>
@@ -14,13 +14,13 @@
         <result property="school" column="school"/>
         <result property="major" column="major"/>
     </resultMap>
-    <select id="queryGoodByTitle" resultMap="GoodList" parameterType="java.lang.String">
+    <select id="queryGoodsByTitle" resultMap="GoodList" parameterType="java.lang.String">
     SELECT *
     FROM GOOD
     WHERE title LIKE #{title}
     </select>
 
-    <select id="queryUserCollectionGood" resultMap="GoodList" parameterType="java.lang.String">
+    <select id="queryUserCollectionGoods" resultMap="GoodList" parameterType="java.lang.String">
     SELECT *
     FROM GOOD
     WHERE(SELECT FROM)
@@ -32,19 +32,19 @@
     WHERE userid=#{userid}
     </select>
 
-    <select id="queryGoodById" resultMap="com.entity.Good" parameterType="java.lang.String">
+    <select id="queryGoodsById" resultMap="com.entity.Good" parameterType="java.lang.String">
     SELECT *
     FROM GOOD
     WHERE goodid=#{goodid}
     </select>
 
-    <delete id="deleteGood" parameterType="java.lang.String">
+    <delete id="deleteGoods" parameterType="java.lang.String">
     DELETE
     FROM GOOD
     WHERE goodid=#{goodid}
     </delete>
 
-    <insert id="addGood" parameterType="com.entity.Good">
+    <insert id="addGoods" parameterType="com.entity.Good">
     INSERT
     INTO GOOD
     VALUES
@@ -56,7 +56,7 @@
     WHERE goodid=#{goodid}
     </update>
 
-    <select id="queryGoodDetailsById" resultType="com.entity.Good" parameterType="java.lang.String">
+    <select id="queryGoodsDetailsById" resultType="com.entity.Good" parameterType="java.lang.String">
 
 
     </select>

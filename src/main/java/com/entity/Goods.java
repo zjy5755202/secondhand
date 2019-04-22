@@ -2,9 +2,9 @@ package com.entity;
 
 import java.util.Date;
 
-public class Good {
-    //唯一标识good的goodid 作为主键
-    private String goodid;
+public class Goods {
+    //唯一标识good的goodsid 作为主键
+    private String goodsid;
     //标明发布者的id 作为外键
     private String userid;
     //商品主图的url
@@ -16,14 +16,14 @@ public class Good {
     //发布时间
     private Date createAt;
     //该商品的详情
-    private GoodDetails goodDetails;
+    private GoodsDetails goodsDetails;
 
-    public String getGoodid() {
-        return goodid;
+    public String getGoodsid() {
+        return goodsid;
     }
 
-    public void setGoodid(String goodid) {
-        this.goodid = goodid;
+    public void setGoodsid(String goodsid) {
+        this.goodsid = goodsid;
     }
 
     public String getUserid() {
@@ -66,14 +66,11 @@ public class Good {
         this.createAt = createAt;
     }
 
-
-
-    public GoodDetails getGoodDetails() {
-        return goodDetails;
+    public GoodsDetails getGoodsDetails() {
+        return goodsDetails;
     }
 
-    public void setGoodDetails(GoodDetails goodDetails) {
-        this.goodDetails = goodDetails;
+    public void setGoodsDetails(GoodsDetails goodsDetails) {
+        this.goodsDetails = goodsDetails;
     }
-
 }

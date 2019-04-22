@@ -10,13 +10,13 @@ public class Supply {
     //供需主图的url
     private String cover;
     //供需主题
-    private String tile;
+    private String title;
     //薪酬
     private double price;
     //发布时间
     private Date createAt;
     //过期时间
-    private Date expire;
+    private Date expires;
     //该需求的详情
     private SupplyDetails supplyDetails;
 
@@ -44,12 +44,12 @@ public class Supply {
         this.cover = cover;
     }
 
-    public String getTile() {
-        return tile;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTile(String tile) {
-        this.tile = tile;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public double getPrice() {
@@ -68,12 +68,12 @@ public class Supply {
         this.createAt = createAt;
     }
 
-    public Date getExpire() {
-        return expire;
+    public Date getExpires() {
+        return expires;
     }
 
-    public void setExpire(Date expire) {
-        this.expire = expire;
+    public void setExpires(Date expires) {
+        this.expires = expires;
     }
 
     public SupplyDetails getSupplyDetails() {
