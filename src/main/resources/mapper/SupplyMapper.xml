@@ -4,5 +4,53 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.dao.SupplyDao">
+    <select id="querySupplyByTitle" parameterType="String" resultType="Supply">
+        SELECT * FROM
+        supply
+        WHERE name LIKE #{title}
+    </select>
 
+    <select id="queryUserCollectionSupply" parameterType="String" resultType="Supply">
+        SELECT
+        usc.supplyid, usc.userid, usc.cover, usc.name, usc.price, usc.expires
+        FROM
+        userSupplyCollection usc
+        LEFT JOIN
+        Supply s
+        ON usc.supplyid = s.supplyid
+        WHERE usc = #{userid}
+    </select>
+
+    <select id="queryUserPublishSupply" parameterType="String" resultType="Supply">
+        SELECT *
+        FROM Supply
+        WHERE userid = #{userid}
+    </select>
+
+    <select id="querySupplyById" parameterType="String" resultType="Supply">
+        SELECT *
+        FROM Supply
+        WHERE supplyid = #{supplyid}
+    </select>
+
+    <delete id="deleteSupply" parameterType="String">
+        DELETE FROM supply
+        WHERE supplyid = #{supplyid}
+    </delete>
+
+    <insert id="addSupply" parameterType="Supply">
+        INSERT INTO supply(supplyid, userid, cover, name, price, expires)
+        VALUES (#{supplyid}, #{userid}, #{cover}, #{title}, #{price}, #{expire})
+    </insert>
+
+    <update id="updateSupply" parameterType="Supply">
+        UPDATE supply SET
+        supplyid = #{supplyid},
+        userid = #{userid},
+        cover = #{cover},
+        title = #{title},
+        name = #{name},
+        price = #{price},
+        expire = #{expire}
+    </update>
 </mapper>

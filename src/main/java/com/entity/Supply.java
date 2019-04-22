@@ -10,7 +10,7 @@ public class Supply {
     //供需主图的url
     private String cover;
     //供需主题
-    private String tile;
+    private String title;
     //薪酬
     private double price;
     //发布时间
@@ -44,12 +44,12 @@ public class Supply {
         this.cover = cover;
     }
 
-    public String getTile() {
-        return tile;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTile(String tile) {
-        this.tile = tile;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public double getPrice() {

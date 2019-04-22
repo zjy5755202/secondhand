@@ -3,7 +3,6 @@ package com.Test;
 import com.controller.GoodController;
 import com.entity.Good;
 import com.entity.GoodDetails;
-import com.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,10 +19,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.WebApplicationContext;
-
-import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -85,7 +81,7 @@ public class GoodControllerTest {
         GoodDetails goodDetails=new GoodDetails();
         goodDetails.setImgs(".........");
         goodDetails.setCollections(100);
-        goodDetails.setContent("content");
+        goodDetails.setContact("content");
         goodDetails.setGoodid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");
@@ -106,7 +102,7 @@ public class GoodControllerTest {
         GoodDetails goodDetails=new GoodDetails();
         goodDetails.setImgs(".........");
         goodDetails.setCollections(100);
-        goodDetails.setContent("content");
+        goodDetails.setContact("content");
         goodDetails.setGoodid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");

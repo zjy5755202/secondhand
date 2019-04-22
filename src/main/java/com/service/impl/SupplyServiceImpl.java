@@ -3,6 +3,7 @@ package com.service.impl;
 import com.dao.SupplyDao;
 import com.dao.UserDao;
 import com.entity.Supply;
+import com.entity.SupplyDetails;
 import com.entity.User;
 import com.service.SupplyService;
 import com.service.UserService;
@@ -24,14 +25,14 @@ public class SupplyServiceImpl implements SupplyService {
     }
 
     @Override
-    public List<Supply> queryUserCollectionSupply(String username) {
-        List<Supply> result=supplyDao.queryUserCollectionSupply(username);
+    public List<Supply> queryUserCollectionSupply(String userid) {
+        List<Supply> result=supplyDao.queryUserCollectionSupply(userid);
         return result;
     }
 
     @Override
-    public List<Supply> queryUserPublishSupply(String username) {
-        List<Supply> result=supplyDao.queryUserPublishSupply(username);
+    public List<Supply> queryUserPublishSupply(String userid) {
+        List<Supply> result=supplyDao.queryUserPublishSupply(userid);
         return result;
     }
 
@@ -57,8 +58,8 @@ public class SupplyServiceImpl implements SupplyService {
     }
 
     @Override
-    public Supply querySupplyDetails(String supplyid) {
-        Supply result=supplyDao.querySupplyDetails(supplyid);
+    public SupplyDetails querySupplyDetails(String supplyid) {
+        SupplyDetails result=supplyDao.querySupplyDetails(supplyid);
         return result;
     }
 }

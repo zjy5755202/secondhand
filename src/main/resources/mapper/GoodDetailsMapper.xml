@@ -5,5 +5,28 @@
 
 <mapper namespace="com.dao.GoodDao">
 
+    <insert id="addGoodDetails" parameterType="GoodsDetails">
+        INSERT INTO GoodDetails(goodsid, images, description, collection, contact)
+        VALUES (#{goodid}, #{imgs}, #{description}, #{collections}, #{contact})
+    </insert>
 
+    <delete id="deleteGoodDetailsById" parameterType="GoodsDetails">
+        DELETE
+        FROM GoodDetails
+        WHERE goodid=#{goodid}
+    </delete>
+
+    <update id="updateGoodDetails" parameterType="GoodDetails">
+        UPDATE GoodDetails SET
+        images = #{imgs},
+        description = #{description},
+        collection = #{collections},
+        contact = #{contact}
+    </update>
+
+    <select id="queryGoodDetailsById" parameterType="String" resultType="GoodDetails">
+        SELECT * FROM
+        GoodDetails
+        WHERE goodsid = #{id}
+    </select>
 </mapper>

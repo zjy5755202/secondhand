@@ -1,8 +1,6 @@
 package com.entity;
 
 
-import org.springframework.web.multipart.MultipartFile;
-
 import java.util.Date;
 
 public class GoodDetails {
@@ -10,7 +8,7 @@ public class GoodDetails {
     private String imgs;
     private String description;
     private int collections;
-    private String content;
+    private String contact;
     private Date createAt;
 
 
@@ -47,12 +45,12 @@ public class GoodDetails {
     }
 
 
-    public String getContent() {
-        return content;
+    public String getContact() {
+        return contact;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public Date getCreateAt() {

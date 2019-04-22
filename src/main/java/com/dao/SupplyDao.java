@@ -1,6 +1,7 @@
 package com.dao;
 
 import com.entity.Supply;
+import com.entity.SupplyDetails;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface SupplyDao {
     //更新一个Supply
     void updateSupply(Supply supply);
     //点开查看详情的时候会调用的，查询这个SupplyDetails
-    Supply querySupplyDetails(String supplyid);
+    SupplyDetails querySupplyDetails(String supplyid);
 }
