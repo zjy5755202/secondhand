@@ -81,7 +81,7 @@ public class GoodsControllerTest {
         GoodsDetails goodsDetails=new GoodsDetails();
         goodsDetails.setImages(".........");
         goodsDetails.setCollections(100);
-        goodsDetails.setContent("content");
+        goodsDetails.setContact("content");
         goodsDetails.setGoodsid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");
@@ -102,7 +102,7 @@ public class GoodsControllerTest {
         GoodsDetails goodDetails=new GoodsDetails();
         goodDetails.setImages(".........");
         goodDetails.setCollections(100);
-        goodDetails.setContent("content");
+        goodDetails.setContact("content");
         goodDetails.setGoodsid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");
