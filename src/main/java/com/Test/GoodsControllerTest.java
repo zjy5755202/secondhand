@@ -1,8 +1,8 @@
 package com.Test;
 
-import com.controller.GoodController;
-import com.entity.Good;
-import com.entity.GoodDetails;
+import com.controller.GoodsController;
+import com.entity.Goods;
+import com.entity.GoodsDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,11 +25,11 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration
 @ContextConfiguration({"classpath:spring/spring-dao.xml","classpath:spring/spring-service.xml",
         "classpath:spring/spring-mvc.xml","classpath:spring/spring-redis.xml","classpath:mybatis-config.xml"})
-public class GoodControllerTest {
+public class GoodsControllerTest {
     private MockMvc mockMvc;
     //需要测试的controller
     @Autowired
-    private GoodController goodController;
+    private GoodsController goodController;
     @Autowired
     private WebApplicationContext context;
 
@@ -77,15 +77,15 @@ public class GoodControllerTest {
     @Test
     public void testupdateGood() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        Good good=new Good();
-        GoodDetails goodDetails=new GoodDetails();
-        goodDetails.setImgs(".........");
-        goodDetails.setCollections(100);
-        goodDetails.setContact("content");
-        goodDetails.setGoodid("100000");
+        Goods good=new Goods();
+        GoodsDetails goodsDetails=new GoodsDetails();
+        goodsDetails.setImages(".........");
+        goodsDetails.setCollections(100);
+        goodsDetails.setContent("content");
+        goodsDetails.setGoodsid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");
-        good.setGoodDetails(goodDetails);
+        good.setGoodsDetails(goodsDetails);
         String json=mapper.writeValueAsString(good);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
@@ -98,15 +98,15 @@ public class GoodControllerTest {
     @Test
     public void testqueryGoodDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        Good good=new Good();
-        GoodDetails goodDetails=new GoodDetails();
-        goodDetails.setImgs(".........");
+        Goods good=new Goods();
+        GoodsDetails goodDetails=new GoodsDetails();
+        goodDetails.setImages(".........");
         goodDetails.setCollections(100);
-        goodDetails.setContact("content");
-        goodDetails.setGoodid("100000");
+        goodDetails.setContent("content");
+        goodDetails.setGoodsid("100000");
         good.setUserid("zhzhuzhu");
         good.setName("test");
-        good.setGoodDetails(goodDetails);
+        good.setGoodsDetails(goodDetails);
         String json=mapper.writeValueAsString(good);
         System.out.println("before--------------------post");
         System.out.println(json.toString());

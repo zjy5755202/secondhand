@@ -3,7 +3,7 @@ package com.entity;
 
 public class SupplyDetails {
     private String supplyid;
-    private String imgs;
+    private String images;
     private String description;
     private int collections;
     private String contact;
@@ -16,12 +16,12 @@ public class SupplyDetails {
         this.supplyid = supplyid;
     }
 
-    public String getImgs() {
-        return imgs;
+    public String getImages() {
+        return images;
     }
 
-    public void setImgs(String imgs) {
-        this.imgs = imgs;
+    public void setImages(String images) {
+        this.images = images;
     }
 
     public String getDescription() {

@@ -16,7 +16,7 @@ public class Supply {
     //发布时间
     private Date createAt;
     //过期时间
-    private Date expire;
+    private Date expires;
     //该需求的详情
     private SupplyDetails supplyDetails;
 
@@ -68,12 +68,12 @@ public class Supply {
         this.createAt = createAt;
     }
 
-    public Date getExpire() {
-        return expire;
+    public Date getExpires() {
+        return expires;
     }
 
-    public void setExpire(Date expire) {
-        this.expire = expire;
+    public void setExpires(Date expires) {
+        this.expires = expires;
     }
 
     public SupplyDetails getSupplyDetails() {

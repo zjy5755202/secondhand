@@ -4,10 +4,8 @@ package com.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.entity.Good;
 import com.entity.Supply;
 import com.redis.Redis;
-import com.service.GoodService;
 import com.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

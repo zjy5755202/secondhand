@@ -4,7 +4,6 @@ package com.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.entity.GoodDetails;
 import com.entity.SupplyDetails;
 import com.entity.User;
 import com.redis.Redis;

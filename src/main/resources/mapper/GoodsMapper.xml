@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GoodsDao">
+
+    <resultMap id="GoodList" type="com.entity.Good">
+        <id property="userid" column="userid"/>
+        <result property="avatar" column="avatar"/>
+        <result property="nickname" column="nickname"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="grade" column="grade"/>
+        <result property="school" column="school"/>
+        <result property="major" column="major"/>
+    </resultMap>
+
+<!--    //根据Title查询Goods-->
+<!--    List<Goods> queryGoodsByTitle(String title);-->
+    <select id="queryGoodsByTitle" resultMap="GoodList" parameterType="java.lang.String">
+    SELECT *
+    FROM GOOD
+    WHERE title LIKE #{title}
+    </select>
+
+<!--    //查看某个用户收藏的Goods-->
+<!--    List<Goods> queryUserCollectionGoods(String username);-->
+
+    <select id="queryUserCollectionGoods" resultMap="GoodList" parameterType="java.lang.String">
+    SELECT *
+    FROM GOOD
+    WHERE(SELECT FROM)
+    </select>
+
+<!--    //查看某个用户发布的Goods-->
+<!--    List<Goods> queryUserPublishGoods(String username);-->
+    <select id="queryUserPublishGoods" resultMap="GoodList" parameterType="java.lang.String">
+    SELECT *
+    FROM GOOD
+    WHERE userid=#{userid}
+    </select>
+
+<!--    //根据goodid来搜索Good-->
+<!--    Goods queryGoodsById(String goodsid);-->
+
+    <select id="queryGoodsById" resultMap="com.entity.Good" parameterType="java.lang.String">
+    SELECT *
+    FROM GOOD
+    WHERE goodid=#{goodid}
+    </select>
+<!--    //删除一个Good-->
+<!--    void deleteGoods(String goodsid);-->
+    <delete id="deleteGoods" parameterType="java.lang.String">
+    DELETE
+    FROM GOOD
+    WHERE goodid=#{goodid}
+    </delete>
+
+<!--    //上传一个Good-->
+<!--    void addGoods(Goods goods);-->
+    <insert id="addGoods" parameterType="com.entity.Goods">
+    INSERT
+    INTO GOOD
+    VALUES
+    </insert>
+<!--    //更新一个Good-->
+<!--    void updateGoods(Goods goods);-->
+    <update id="updateGoods" parameterType="com.entity.Goods">
+    UPDATE GOOD
+    SET
+    WHERE goodid=#{goodid}
+    </update>
+<!--    //点开查看详情的时候会调用的，查询这个good的remarks和Details-->
+<!--    Goods queryGoodsDetailsById(String goodsid);-->
+    <select id="queryGoodsDetailsById" resultType="com.entity.Good" parameterType="java.lang.String">
+
+
+    </select>
+
+</mapper>
