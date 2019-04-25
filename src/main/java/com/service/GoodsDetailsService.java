@@ -11,5 +11,5 @@ public interface GoodsDetailsService {
     //更新一个供需
     int updateGoodsDetails(GoodsDetails supply);
     //查找一个供需
-    GoodsDetails queryGoodsDetailsById(String id);
+    GoodsDetails queryGoodsDetailsById(String goodsid);
 }

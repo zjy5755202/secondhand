@@ -39,7 +39,7 @@
     </delete>
 
     <insert id="addSupply" parameterType="Supply">
-        INSERT INTO supply(supplyid, userid, cover, name, price, expires)
+        INSERT INTO supply(supplyid, userid, cover, title, price, expires)
         VALUES (#{supplyid}, #{userid}, #{cover}, #{title}, #{price}, #{expire})
     </insert>
 
@@ -49,7 +49,6 @@
         userid = #{userid},
         cover = #{cover},
         title = #{title},
-        name = #{name},
         price = #{price},
         expire = #{expire}
     </update>
