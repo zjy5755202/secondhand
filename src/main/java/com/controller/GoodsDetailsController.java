@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/GoodDetails")
+@RequestMapping("/GoodsDetails")
 public class GoodsDetailsController {
 
     @Autowired
     private GoodsDetailsService goodsDetailsService;
 
-    @RequestMapping("/upload")
-    public String upload(GoodsDetails goodDetails) throws IOException {
+    @RequestMapping("/addGoodsDetails")
+    public String addGoodsDetails(GoodsDetails goodDetails) throws IOException {
 //        //保存数据库的路径
 //        String sqlPath = null;
 //        //定义文件保存的本地路径
@@ -53,8 +53,8 @@ public class GoodsDetailsController {
         return null;
     }
 
-    @RequestMapping("/delGoodDetailsByid")
-    public void delGoodsDetailsByid(String goodid) throws IOException {
+    @RequestMapping("/deleteGoodsDetailsByid")
+    public void deleteGoodsDetailsByid(String goodid) throws IOException {
         goodsDetailsService.deleteGoodsDetailsById(goodid);
     }
 

@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/Good")
+@RequestMapping("/Goods")
 public class GoodsController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class GoodsController {
         return result;
     }
     //查看某个用户收藏的Goods
-    @RequestMapping("/queryUserCollectionGood")
+    @RequestMapping("/queryUserCollectionGoods")
     @ResponseBody
     public List<Goods> queryUserCollectionGood(String uuid){
         List<Goods> result=goodsService.queryUserCollectionGoods(uuid);
@@ -47,35 +47,40 @@ public class GoodsController {
         return result;
     }
     //根据goodid来搜索Good
-    @RequestMapping("/queryGoodById")
+    @RequestMapping("/queryGoodsById")
     @ResponseBody
-    public Goods queryGoodById(String goodsid){
+    public Goods queryGoodsById(@RequestBody String jsonstr){
+        String goodsid=(String)JSON.parse(jsonstr);
         Goods result=goodsService.queryGoodsById(goodsid);
         return result;
     }
     //删除一个Good
-    @RequestMapping("/deleteGood")
-    public void deleteGood(String goodsid){
+    @RequestMapping("/deleteGoods")
+    @ResponseBody
+    public void deleteGoods(@RequestBody String jsonstr){
+        String goodsid=(String)JSON.parse(jsonstr);
         goodsService.deleteGoods(goodsid);
     }
     //上传一个Good
-    @RequestMapping("/addGood")
-    public void addGood(String jsonstr){
-        Goods good = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
-        goodsService.addGoods(good);
+    @RequestMapping("/addGoods")
+    @ResponseBody
+    public void addGoods(@RequestBody String jsonstr){
+        Goods goods = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
+        String str=JSON.toJSONString(goods);
+        goodsService.addGoods(goods);
     }
     //更新一个Good
-    @RequestMapping("/updateGood")
-    public void updateGood(@RequestBody String jsonstr){
-        Goods good = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
-        String str=JSON.toJSONString(good);
-        System.out.println("-------------后端对象--------------");
-        System.out.println(str);
-        //goodService.updateGood(good);
+    @RequestMapping("/updateGoods")
+    @ResponseBody
+    public void updateGoods(@RequestBody String jsonstr){
+        Goods goods = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
+        String str=JSON.toJSONString(goods);
+        goodsService.updateGoods(goods);
     }
     //点开查看详情的时候会调用的，查询这个good的remarks和Details
-    @RequestMapping("/queryGoodDetails")
-    public Goods queryGoodDetails(String goodsid){
+    @RequestMapping("/queryGoodsDetails")
+    @ResponseBody
+    public Goods queryGoodsDetails(String goodsid){
         Goods result=goodsService.queryGoodsDetailsById(goodsid);
         return result;
     }

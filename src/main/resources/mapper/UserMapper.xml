@@ -6,19 +6,19 @@
 <mapper namespace="com.dao.UserDao">
 
     <insert id="addUser" parameterType="User">
-        INSERT INTO users(uerId,avatar,nicekname,name,gender,grade,school,major)
-        VALUES (#{uerId},#{avatar}, #{nicekname}, #{name}, #{gender},#{grade},#{school},#{major})
+        INSERT INTO users(userid,avatar,nickname,name,gender,grade,school,major)
+        VALUES (#{userid},#{avatar}, #{nickname}, #{name}, #{gender},#{grade},#{school},#{major})
     </insert>
 
     <update id="updateUser" parameterType="User">
-        UPDATE user
-        SET avatar = #{avatar},nicekname = #{nicekname},grade = #{grade},school=#{school},major=#{major}
-        WHERE  userId = #{userId}
+        UPDATE users
+        SET avatar = #{avatar},nickname = #{nickname},grade = #{grade},school=#{school},major=#{major}
+        WHERE  userid = #{userid}
     </update>
 
-    <select id="queryById" resultType="User" parameterType="java.lang.String">
+    <select id="queryUserById" resultType="User" parameterType="java.lang.String">
         SELECT *
-        FROM user
+        FROM users
         WHERE userid=#{userid}
     </select>
 <!--    <resultMap type="user" id="userResultMap" >-->

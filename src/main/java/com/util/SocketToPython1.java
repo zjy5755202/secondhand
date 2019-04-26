@@ -8,8 +8,9 @@ import java.net.Socket;
 
 public class SocketToPython1 {
     public static final String IP_ADDR="127.0.0.1";
-    public static final int PORT=8080;
-    public Object remoteCall(String jsonstr){
+    public static final int PORT=80;
+
+    public static JSONObject getLoginState(String jsonstr){
         Socket socket=null;
 
         try {
@@ -17,7 +18,7 @@ public class SocketToPython1 {
             OutputStream os=socket.getOutputStream();
             PrintStream out=new PrintStream(os);
             out.print(jsonstr);
-            out.print("over");
+            //out.print("over");
 
             InputStream is=socket.getInputStream();
             BufferedReader br=new BufferedReader(new InputStreamReader(is,"utf-8"));

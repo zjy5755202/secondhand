@@ -63,33 +63,63 @@ public class GoodsControllerTest {
 
     }
     @Test
-    public void testqueryGoodById() throws Exception {
-
-    }
-    @Test
-    public void testdeleteGood() throws Exception {
-
-    }
-    @Test
-    public void testaddGood() throws Exception {
-
-    }
-    @Test
-    public void testupdateGood() throws Exception {
+    public void testqueryGoodsById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        Goods good=new Goods();
-        GoodsDetails goodsDetails=new GoodsDetails();
-        goodsDetails.setImages(".........");
-        goodsDetails.setCollections(100);
-        goodsDetails.setContact("content");
-        goodsDetails.setGoodsid("100000");
-        good.setUserid("zhzhuzhu");
-        good.setName("test");
-        good.setGoodsDetails(goodsDetails);
-        String json=mapper.writeValueAsString(good);
+        String goodsid="10000";
+        String json=mapper.writeValueAsString(goodsid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Good/updateGood").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsById").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+    @Test
+    public void testdeleteGoods() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String goodsid="10000";
+        String json=mapper.writeValueAsString(goodsid);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/deleteGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+    @Test
+    public void testaddGoods() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        Goods goods=new Goods();
+        goods.setGoodsid("10000");
+        goods.setUserid("2016302580188");
+        goods.setCover(".....");
+        goods.setName("goods1");
+        goods.setPrice(100);
+        String json=mapper.writeValueAsString(goods);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/addGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+
+    }
+    @Test
+    public void testupdateGoods() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        Goods goods=new Goods();
+        goods.setGoodsid("10000");
+        goods.setUserid("2016302580188");
+        goods.setCover(".....");
+        goods.setName("goods1update");
+        goods.setPrice(100);
+        String json=mapper.writeValueAsString(goods);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/updateGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();
@@ -97,24 +127,7 @@ public class GoodsControllerTest {
     }
     @Test
     public void testqueryGoodDetails() throws Exception {
-        ObjectMapper mapper=new ObjectMapper();
-        Goods good=new Goods();
-        GoodsDetails goodDetails=new GoodsDetails();
-        goodDetails.setImages(".........");
-        goodDetails.setCollections(100);
-        goodDetails.setContact("content");
-        goodDetails.setGoodsid("100000");
-        good.setUserid("zhzhuzhu");
-        good.setName("test");
-        good.setGoodsDetails(goodDetails);
-        String json=mapper.writeValueAsString(good);
-        System.out.println("before--------------------post");
-        System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Good/queryGoodDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
-        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-        System.out.println("after---------------------post");
-        String result = mvcResult.getResponse().getContentAsString();
-        System.out.println("==========结果为：==========\n" + result + "\n");
+
     }
 
 

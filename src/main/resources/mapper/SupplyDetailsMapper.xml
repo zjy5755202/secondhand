@@ -3,28 +3,28 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.dao.GoodDao">
+<mapper namespace="com.dao.SupplyDetailsDao">
 
-    <insert id="addSupplyDetails" parameterType="SupplyDetails">
-        INSERT INTO SupplyDetails(supplyid, images, description, collections, contact)
-        VALUES (#{supplyid}, #{images}, #{description}, #{collections},#{contact})
-    </insert>
+<!--    <insert id="addSupplyDetails" parameterType="SupplyDetails">-->
+<!--        INSERT INTO SupplyDetails(supplyid, images, description, collections, contact)-->
+<!--        VALUES (#{supplyid}, #{images}, #{description}, #{collections},#{contact})-->
+<!--    </insert>-->
 
-    <delete id="deleteSupplyDetailsById" parameterType="String">
-        DELETE FROM SupplyDetails
-        WHERE supplyid = #{supplyid}
-    </delete>
+<!--    <delete id="deleteSupplyDetailsById" parameterType="String">-->
+<!--        DELETE FROM SupplyDetails-->
+<!--        WHERE supplyid = #{supplyid}-->
+<!--    </delete>-->
 
-    <update id="updateSupplyDetails" parameterType="SupplyDetails">
-        UPDATE SupplyDetails SET
-        images = #{imgs},
-        description = #{description},
-        collections = #{collections},
-        contact = #{contact}
-    </update>
+<!--    <update id="updateSupplyDetails" parameterType="SupplyDetails">-->
+<!--        UPDATE SupplyDetails SET-->
+<!--        images = #{imgs},-->
+<!--        description = #{description},-->
+<!--        collections = #{collections},-->
+<!--        contact = #{contact}-->
+<!--    </update>-->
 
-    <select id="querySupplyDetailsById" parameterType="String" resultType="SupplyDetails">
-        SELECT * FROM SupplDetails
-        WHERE supplyid = #{supplyid}
-    </select>
+<!--    <select id="querySupplyDetailsById" parameterType="String" resultType="SupplyDetails">-->
+<!--        SELECT * FROM SupplDetails-->
+<!--        WHERE supplyid = #{supplyid}-->
+<!--    </select>-->
 </mapper>

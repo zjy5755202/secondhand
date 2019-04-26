@@ -24,8 +24,8 @@ public class SupplyDetailsController {
     @Autowired
     private SupplyDetailsService supplyDetailsService;
 
-    @RequestMapping("/uploadSupplyDetails")
-    public void uploadSupplyDetails(@RequestBody String jsonstr) throws IOException {
+    @RequestMapping("/addSupplyDetails")
+    public void addSupplyDetails(@RequestBody String jsonstr) throws IOException {
         SupplyDetails supplyDetails = JSON.parseObject(jsonstr, new TypeReference<SupplyDetails>() {});
         supplyDetailsService.addSupplyDetails(supplyDetails);
     }
@@ -39,13 +39,13 @@ public class SupplyDetailsController {
 
     @RequestMapping("/querySupplyDetailsByid")
     @ResponseBody
-    public  SupplyDetails querySupplyDetailsByid(String goodid) throws IOException {
-        SupplyDetails result=supplyDetailsService.querySupplyDetailsById(goodid);
+    public  SupplyDetails querySupplyDetailsByid(String suuplyid) throws IOException {
+        SupplyDetails result=supplyDetailsService.querySupplyDetailsById(suuplyid);
         return result;
     }
 
-    @RequestMapping("/delSupplyDetailsByid")
-    public void delSupplyDetailsByid(String supplyid) throws IOException {
+    @RequestMapping("/deleteSupplyDetailsByid")
+    public void deleteSupplyDetailsByid(String supplyid) throws IOException {
         supplyDetailsService.deleteSupplyDetailsById(supplyid);
     }
 }

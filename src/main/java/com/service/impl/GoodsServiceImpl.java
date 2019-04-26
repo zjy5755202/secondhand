@@ -34,8 +34,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Goods queryGoodsById(String goodid) {
-        Goods result=goodsDao.queryGoodsById(goodid);
+    public Goods queryGoodsById(String goodsid) {
+        Goods result=goodsDao.queryGoodsById(goodsid);
         return result;
     }
 
