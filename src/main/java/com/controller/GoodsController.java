@@ -26,24 +26,27 @@ public class GoodsController {
     private Redis redis;
 
     //根据标题搜索Goods
-    @RequestMapping("/queryGoodByTitle")
+    @RequestMapping("/queryGoodsByName")
     @ResponseBody
-    public List<Goods> queryGoodByTitle(String title){
-        List<Goods> result=goodsService.queryGoodsByTitle(title);
+    public List<Goods> queryGoodsByName(@RequestBody String jsonstr){
+        String name=(String)JSON.parse(jsonstr);
+        List<Goods> result=goodsService.queryGoodsByName(name);
         return result;
     }
     //查看某个用户收藏的Goods
     @RequestMapping("/queryUserCollectionGoods")
     @ResponseBody
-    public List<Goods> queryUserCollectionGood(String uuid){
-        List<Goods> result=goodsService.queryUserCollectionGoods(uuid);
+    public List<Goods> queryUserCollectionGoods(@RequestBody String jsonstr){
+        String userid=(String)JSON.parse(jsonstr);
+        List<Goods> result=goodsService.queryUserCollectionGoods(userid);
         return result;
     }
     //查看某个用户发布的Goods
     @RequestMapping("/queryUserPublishGoods")
     @ResponseBody
-    public List<Goods> queryUserPublishGoods(String uuid){
-        List<Goods> result=goodsService.queryUserPublishGoods(uuid);
+    public List<Goods> queryUserPublishGoods(@RequestBody String jsonstr){
+        String userid=(String)JSON.parse(jsonstr);
+        List<Goods> result=goodsService.queryUserPublishGoods(userid);
         return result;
     }
     //根据goodid来搜索Good
@@ -66,7 +69,6 @@ public class GoodsController {
     @ResponseBody
     public void addGoods(@RequestBody String jsonstr){
         Goods goods = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
-        String str=JSON.toJSONString(goods);
         goodsService.addGoods(goods);
     }
     //更新一个Good
@@ -74,7 +76,6 @@ public class GoodsController {
     @ResponseBody
     public void updateGoods(@RequestBody String jsonstr){
         Goods goods = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
-        String str=JSON.toJSONString(goods);
         goodsService.updateGoods(goods);
     }
     //点开查看详情的时候会调用的，查询这个good的remarks和Details

@@ -16,8 +16,8 @@ public class GoodsServiceImpl implements GoodsService {
 
 
     @Override
-    public List<Goods> queryGoodsByTitle(String title) {
-        List<Goods> result=goodsDao.queryGoodsByTitle(title);
+    public List<Goods> queryGoodsByName(String name) {
+        List<Goods> result=goodsDao.queryGoodsByName(name);
         return result;
     }
 

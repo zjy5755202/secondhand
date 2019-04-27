@@ -21,16 +21,5 @@
         FROM users
         WHERE userid=#{userid}
     </select>
-<!--    <resultMap type="user" id="userResultMap" >-->
-<!--        <id property="userId" column="Id"/>-->
-<!--        <result property="userName" column="name"/>-->
-<!--        <result property="userPassword" column="number"/>-->
-<!--        <result property="paperDetail" column="detail"/>-->
-<!--    </resultMap>-->
-<!--    <select id="queryByUsername" resultType="com.entity.User" parameterType="String">-->
-<!--        SELECT *-->
-<!--        FROM user-->
-<!--        WHERE name=#{name}-->
-<!--    </select>-->
 
 </mapper>

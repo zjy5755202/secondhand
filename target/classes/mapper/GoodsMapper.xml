@@ -16,33 +16,31 @@
 <!--        <result property="major" column="major"/>-->
 <!--    </resultMap>-->
 
-<!--&lt;!&ndash;//根据Title查询Goods&ndash;&gt;-->
-<!--&lt;!&ndash;    List<Goods> queryGoodsByTitle(String title);&ndash;&gt;-->
-<!--    <select id="queryGoodsByTitle" resultMap="GoodList" parameterType="java.lang.String">-->
-<!--    SELECT *-->
-<!--    FROM GOOD-->
-<!--    WHERE title LIKE #{title}-->
-<!--    </select>-->
+<!--//根据Title查询Goods-->
+<!--    List<Goods> queryGoodsByTitle(String title);-->
+    <select id="queryGoodsByName" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE name like CONCAT('%',#{name},'%')
+    </select>
 
 <!--&lt;!&ndash;    //查看某个用户收藏的Goods&ndash;&gt;-->
 <!--&lt;!&ndash;    List<Goods> queryUserCollectionGoods(String username);&ndash;&gt;-->
 
 <!--    <select id="queryUserCollectionGoods" resultMap="GoodList" parameterType="java.lang.String">-->
 <!--    SELECT *-->
-<!--    FROM GOOD-->
+<!--    FROM goods-->
 <!--    WHERE(SELECT FROM)-->
 <!--    </select>-->
 
-<!--&lt;!&ndash;    //查看某个用户发布的Goods&ndash;&gt;-->
-<!--&lt;!&ndash;    List<Goods> queryUserPublishGoods(String username);&ndash;&gt;-->
-<!--    <select id="queryUserPublishGoods" resultMap="GoodList" parameterType="java.lang.String">-->
-<!--    SELECT *-->
-<!--    FROM GOOD-->
-<!--    WHERE userid=#{userid}-->
-<!--    </select>-->
+<!--    //查看某个用户发布的Goods-->
+<!--    List<Goods> queryUserPublishGoods(String username);-->
+    <select id="queryUserPublishGoods" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE userid=#{userid}
+    </select>
 
-<!--    //根据goodid来搜索Good-->
-<!--    Goods queryGoodsById(String goodsid);-->
 
     <select id="queryGoodsById" resultType="com.entity.Goods" parameterType="java.lang.String">
     SELECT *
@@ -61,7 +59,7 @@
 <!--    void addGoods(Goods goods);-->
     <insert id="addGoods" parameterType="com.entity.Goods">
     INSERT
-    INTO goods(goodsid,userid,cover,name,price,creatAt)
+    INTO goods(goodsid,userid,cover,name,price,createAt)
     VALUES (#{goodsid},#{userid},#{cover},#{name},#{price},now())
     </insert>
 <!--    //更新一个Good-->

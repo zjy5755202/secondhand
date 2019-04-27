@@ -41,27 +41,48 @@ public class GoodsControllerTest {
     }
 
     @Test
-    public void testqueryGoodByTitle() throws Exception {
+    public void testqueryGoodsByName() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String name="goods";
+        String json=mapper.writeValueAsString(name);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsByName").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //未测试
+    @Test
+    public void testqueryUserCollectionGood() throws Exception {
 //        ObjectMapper mapper=new ObjectMapper();
-//        Good good=new Good();
-//        String json=mapper.writeValueAsString(good);
+//        String userid="2016302580188";
+//        String json=mapper.writeValueAsString(userid);
 //        System.out.println("before--------------------post");
 //        System.out.println(json.toString());
-//        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/user/checkLogin").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+//        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsByName").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
 //        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
 //        System.out.println("after---------------------post");
 //        String result = mvcResult.getResponse().getContentAsString();
 //        System.out.println("==========结果为：==========\n" + result + "\n");
-    }
-
-    @Test
-    public void testqueryUserCollectionGood() throws Exception {
 
     }
     @Test
     public void testqueryUserPublishGoods() throws Exception {
-
+        ObjectMapper mapper=new ObjectMapper();
+        String userid="2016302580188";
+        String json=mapper.writeValueAsString(userid);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
     }
+
     @Test
     public void testqueryGoodsById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -78,7 +99,7 @@ public class GoodsControllerTest {
     @Test
     public void testdeleteGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        String goodsid="10000";
+        String goodsid="10001";
         String json=mapper.writeValueAsString(goodsid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
@@ -92,10 +113,10 @@ public class GoodsControllerTest {
     public void testaddGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Goods goods=new Goods();
-        goods.setGoodsid("10000");
+        goods.setGoodsid("10001");
         goods.setUserid("2016302580188");
         goods.setCover(".....");
-        goods.setName("goods1");
+        goods.setName("goods2");
         goods.setPrice(100);
         String json=mapper.writeValueAsString(goods);
         System.out.println("before--------------------post");

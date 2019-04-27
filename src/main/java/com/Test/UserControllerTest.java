@@ -38,37 +38,6 @@ public class UserControllerTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
         System.out.println("movkMvc-Initial");
     }
-//
-//    @Test
-//    public void testaddUser() throws Exception {
-//        ObjectMapper mapper=new ObjectMapper();
-//        User user=new User();
-//        user.setUserid("2016302580188");
-//        user.setName("朱江源");
-//        user.setNickname("hhh");
-//        user.setPassword("123456");
-//        String json=mapper.writeValueAsString(user);
-//        System.out.println("before----------------post");
-//        System.out.println(json.toString());
-//        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/user/addUser").contentType("application/json;charset=UTF-8").content(json);
-//        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-//        System.out.println("after---------------------post");
-//        String result = mvcResult.getResponse().getContentAsString();
-//        System.out.println("==========结果为：==========\n" + result + "\n");
-//
-////
-////        ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/user/get").param("id", "5"));
-////        MvcResult mvcResult = resultActions.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-////        String result = mvcResult.getResponse().getContentAsString();
-////        System.out.println("==========结果为：==========\n" + result + "\n");
-//    }
-
-
-
-
-
-
-
 
     @Test
     public void testaddUser() throws Exception {

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface GoodsService {
     //根据Title查询Good
-     List<Goods> queryGoodsByTitle(String title);
+     List<Goods> queryGoodsByName(String name);
     //查看某个用户收藏的Goods
      List<Goods> queryUserCollectionGoods(String username);
     //查看某个用户发布的Goods
