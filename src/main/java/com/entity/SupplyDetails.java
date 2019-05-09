@@ -2,17 +2,17 @@ package com.entity;
 
 
 public class SupplyDetails {
-    private String supplyid;
+    private int supplyid;
     private String images;
     private String description;
     private int collections;
     private String contact;
 
-    public String getSupplyid() {
+    public int getSupplyid() {
         return supplyid;
     }
 
-    public void setSupplyid(String supplyid) {
+    public void setSupplyid(int supplyid) {
         this.supplyid = supplyid;
     }
 

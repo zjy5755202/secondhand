@@ -5,32 +5,30 @@
 
 <mapper namespace="com.dao.GoodsDetailsDao">
 
-<!--    <insert id="addGoodDetails" parameterType="GoodsDetails">-->
-<!--        INSERT INTO GoodDetails(goodsid, images, description, collections, contact, createdAt)-->
-<!--        VALUES (#{goodsid}, #{images}, #{description}, #{collections}, #{contact}, now())-->
-<!--    </insert>-->
+    <insert id="addGoodDetails" parameterType="GoodsDetails">
+        INSERT INTO GoodDetails(goodsid, images, description, collections, contact, createdAt)
+        VALUES (#{goodsid}, #{images}, #{description}, #{collections}, #{contact}, now())
+    </insert>
 
-<!--    <delete id="deleteGoodDetailsById" parameterType="GoodsDetails">-->
-<!--        DELETE-->
-<!--        FROM GoodDetails-->
-<!--        WHERE goodsid = #{goodsid}-->
-<!--    </delete>-->
+    <delete id="deleteGoodDetailsById" parameterType="GoodsDetails">
+        DELETE
+        FROM GoodDetails
+        WHERE goodsid = #{goodsid}
+    </delete>
 
-<!--    <update id="updateGoodDetails" parameterType="GoodsDetails">-->
-<!--        UPDATE GoodDetails SET-->
-<!--        images = #{images},-->
-<!--        description = #{description},-->
-<!--        collections = #{collections},-->
-<!--        contact = #{contact}-->
-<!--        WHERE-->
+    <update id="updateGoodDetails" parameterType="GoodsDetails">
+        UPDATE GoodDetails SET
+        images = #{images},
+        description = #{description},
+        collections = #{collections},
+        contact = #{contact}
+        WHERE goodsid = #{goodsid}
+    </update>
 
-<!--        goodsid = #{goodsid}-->
-<!--    </update>-->
-
-<!--    <select id="queryGoodDetailsById" parameterType="String" resultType="GoodsDetails">-->
-<!--        SELECT * FROM-->
-<!--        GoodDetails-->
-<!--        WHERE goodsid = #{goodsid}-->
-<!--    </select>-->
+    <select id="queryGoodDetailsById" parameterType="String" resultType="GoodsDetails">
+        SELECT * FROM
+        GoodDetails
+        WHERE goodsid = #{goodsid}
+    </select>
 
 </mapper>

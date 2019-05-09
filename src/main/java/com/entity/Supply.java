@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Supply {
     //唯一标识supply的supplyid 作为主键
-    private String supplyid;
+    private int supplyid;
     //标明发布者的id 作为外键
     private String userid;
     //供需主图的url
@@ -20,11 +20,11 @@ public class Supply {
     //该需求的详情
     private SupplyDetails supplyDetails;
 
-    public String getSupplyid() {
+    public int getSupplyid() {
         return supplyid;
     }
 
-    public void setSupplyid(String supplyid) {
+    public void setSupplyid(int supplyid) {
         this.supplyid = supplyid;
     }
 

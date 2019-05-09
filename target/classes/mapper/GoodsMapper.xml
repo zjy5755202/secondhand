@@ -24,14 +24,15 @@
     WHERE name like CONCAT('%',#{name},'%')
     </select>
 
-<!--&lt;!&ndash;    //查看某个用户收藏的Goods&ndash;&gt;-->
-<!--&lt;!&ndash;    List<Goods> queryUserCollectionGoods(String username);&ndash;&gt;-->
+<!--    //查看某个用户收藏的Goods-->
+<!--    List<Goods> queryUserCollectionGoods(String username);-->
 
-<!--    <select id="queryUserCollectionGoods" resultMap="GoodList" parameterType="java.lang.String">-->
-<!--    SELECT *-->
-<!--    FROM goods-->
-<!--    WHERE(SELECT FROM)-->
-<!--    </select>-->
+    <select id="queryUserCollectionGoods" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE goodsid =
+    (SELECT goosid FROM user_goods_collections where userid = #{userid} )
+    </select>
 
 <!--    //查看某个用户发布的Goods-->
 <!--    List<Goods> queryUserPublishGoods(String username);-->

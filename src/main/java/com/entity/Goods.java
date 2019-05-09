@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Goods {
     //唯一标识good的goodsid 作为主键
-    private String goodsid;
+    private int goodsid;
     //标明发布者的id 作为外键
     private String userid;
     //商品主图的url
@@ -18,11 +18,11 @@ public class Goods {
     //该商品的详情
     private GoodsDetails goodsDetails;
 
-    public String getGoodsid() {
+    public int getGoodsid() {
         return goodsid;
     }
 
-    public void setGoodsid(String goodsid) {
+    public void setGoodsid(int goodsid) {
         this.goodsid = goodsid;
     }
 

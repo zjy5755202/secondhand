@@ -39,6 +39,7 @@ public class UserControllerTest {
         System.out.println("movkMvc-Initial");
     }
 
+    //已测试
     @Test
     public void testaddUser() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -62,11 +63,7 @@ public class UserControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-
-
-
-
-
+    //已测试
     @Test
     public void testupdateUser() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -91,6 +88,7 @@ public class UserControllerTest {
     }
 
 
+    //已测试
     @Test
     public void testqueryUserById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();

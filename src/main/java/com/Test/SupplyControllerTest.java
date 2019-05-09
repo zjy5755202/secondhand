@@ -44,7 +44,7 @@ public class SupplyControllerTest {
         System.out.println("movkMvc-Initial");
     }
 
-
+    //已测试
     @Test
     public void testquerySupplyById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -59,6 +59,7 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
+    //已测试
     @Test
     public void testdeleteSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -73,6 +74,7 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
+    //已测试
     @Test
     public void testaddSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -96,6 +98,7 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
+    //已测试
     @Test
     public void testupdateSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();

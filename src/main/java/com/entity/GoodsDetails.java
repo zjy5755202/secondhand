@@ -4,18 +4,18 @@ package com.entity;
 import java.util.Date;
 
 public class GoodsDetails {
-    private String goodsid;
+    private int goodsid;
     private String images;
     private String description;
     private int collections;
     private String contact;
     private Date createAt;
 
-    public String getGoodsid() {
+    public int getGoodsid() {
         return goodsid;
     }
 
-    public void setGoodsid(String goodsid) {
+    public void setGoodsid(int goodsid) {
         this.goodsid = goodsid;
     }
 
