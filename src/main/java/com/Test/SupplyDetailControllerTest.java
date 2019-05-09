@@ -47,7 +47,7 @@ public class SupplyDetailControllerTest {
     public void testaddSupplyDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         SupplyDetails supplyDetails=new SupplyDetails();
-        supplyDetails.setSupplyid("10000");
+        supplyDetails.setSupplyid(10000);
         supplyDetails.setImages("....");
         supplyDetails.setDescription("description");
         supplyDetails.setCollections(0);
@@ -67,7 +67,7 @@ public class SupplyDetailControllerTest {
     public void testupdateGoodsDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         SupplyDetails supplyDetails=new SupplyDetails();
-        supplyDetails.setSupplyid("10000");
+        supplyDetails.setSupplyid(10000);
         supplyDetails.setImages("....");
         supplyDetails.setDescription("descriptionChange");
         supplyDetails.setCollections(0);

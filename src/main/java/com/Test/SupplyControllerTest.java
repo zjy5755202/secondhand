@@ -79,7 +79,7 @@ public class SupplyControllerTest {
     public void testaddSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Supply supply=new Supply();
-        supply.setSupplyid("10000");
+        supply.setSupplyid(10000);
         supply.setUserid("2016302580188");
         supply.setCover("000000");
         supply.setTitle("00000");
@@ -103,7 +103,7 @@ public class SupplyControllerTest {
     public void testupdateSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Supply supply=new Supply();
-        supply.setSupplyid("10000");
+        supply.setSupplyid(10000);
         supply.setUserid("2016302580188");
         supply.setCover("11111111");
         supply.setTitle("00000");

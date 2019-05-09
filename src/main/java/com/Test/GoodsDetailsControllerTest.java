@@ -48,7 +48,7 @@ public class GoodsDetailsControllerTest {
     public void testaddGoodsDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         GoodsDetails goodsDetails=new GoodsDetails();
-        goodsDetails.setGoodsid("10000");
+        goodsDetails.setGoodsid(10000);
         goodsDetails.setImages("....");
         goodsDetails.setDescription("description");
         goodsDetails.setCollections(0);
@@ -68,7 +68,7 @@ public class GoodsDetailsControllerTest {
     public void testupdateGoodsDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         GoodsDetails goodsDetails=new GoodsDetails();
-        goodsDetails.setGoodsid("10000");
+        goodsDetails.setGoodsid(10000);
         goodsDetails.setImages("...");
         goodsDetails.setDescription("descriptionchange");
         goodsDetails.setCollections(0);
