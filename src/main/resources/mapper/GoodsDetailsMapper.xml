@@ -6,7 +6,7 @@
 <mapper namespace="com.dao.GoodsDetailsDao">
 
     <insert id="addGoodDetails" parameterType="GoodsDetails">
-        INSERT INTO GoodDetails(goodsid, images, description, collections, contact, createdAt)
+        INSERT INTO GoodDetails(goodsid, images, description, collections, contact, createAt)
         VALUES (#{goodsid}, #{images}, #{description}, #{collections}, #{contact}, now())
     </insert>
 

@@ -75,9 +75,10 @@
     </update>
 <!--    //点开查看详情的时候会调用的，查询这个good的remarks和Details-->
 <!--    Goods queryGoodsDetailsById(String goodsid);-->
+
 <!--    <select id="queryGoodsDetailsById" resultType="com.entity.Goods" parameterType="java.lang.String">-->
 <!--    SELECT *-->
-<!--    FROM goods-->
+<!--    FROM goods_details-->
 <!--    WHERE goodsid=#{goodsid}-->
 <!--    </select>-->
 

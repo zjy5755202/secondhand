@@ -8,11 +8,10 @@ import java.net.Socket;
 
 public class SocketToPython1 {
     public static final String IP_ADDR="127.0.0.1";
-    public static final int PORT=80;
+    public static final int PORT=8080;
 
     public static JSONObject getLoginState(String jsonstr){
         Socket socket=null;
-
         try {
             socket=new Socket(IP_ADDR,PORT);
             OutputStream os=socket.getOutputStream();

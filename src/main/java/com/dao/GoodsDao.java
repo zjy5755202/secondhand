@@ -1,6 +1,7 @@
 package com.dao;
 
 import com.entity.Goods;
+import com.entity.GoodsDetails;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface GoodsDao {
     //更新一个Good
      void updateGoods(Goods goods);
     //点开查看详情的时候会调用的，查询这个good的remarks和Details
-    Goods queryGoodsDetailsById(String goodsid);
+    GoodsDetails queryGoodsDetailsById(String goodsid);
 }

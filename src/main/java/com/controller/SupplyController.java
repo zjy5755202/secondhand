@@ -5,6 +5,7 @@ package com.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.Supply;
+import com.entity.SupplyDetails;
 import com.redis.Redis;
 import com.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,27 +26,36 @@ public class SupplyController {
     private Redis redis;
 
     //根据title搜索supply
+    //代码完毕 未测试 待调试
     @RequestMapping("/querySupplyByTitle")
     @ResponseBody
-    public List<Supply> querySupplyByTitle(String title){
+    public List<Supply> querySupplyByTitle(@RequestBody String jsonstr){
+        String title=(String)JSON.parse(jsonstr);
+        List<Supply> result=supplyService.querySupplyByTitle(title);
+        return result;
+    }
 
-        return null;
-    }
     //搜索某用户的supply收藏
+    //代码完毕 未测试 待调试
     @RequestMapping("/queryUserCollectionSupply")
-    public List<Supply> queryUserCollectionSupply(String uuid){
-        String userId=redis.get(uuid);
-        return supplyService.queryUserCollectionSupply(userId);
+    public List<Supply> queryUserCollectionSupply(@RequestBody String jsonstr){
+        String userid=(String)JSON.parse(jsonstr);
+        List<Supply> result=supplyService.queryUserCollectionSupply(userid);
+        return result;
     }
+
     //搜索某用户发布的supply
+    //代码完毕 未测试 待调试
     @RequestMapping("/queryUserPublishSupply")
     @ResponseBody
-    public List<Supply> queryUserPublishSupply(String uuid){
-        String userId=redis.get(uuid);
-        return supplyService.queryUserPublishSupply(userId);
+    public List<Supply> queryUserPublishSupply(@RequestBody String jsonstr){
+        String userid=(String)JSON.parse(jsonstr);
+        List<Supply> result=supplyService.queryUserPublishSupply(userid);
+        return result;
     }
 
     //根据supplyid搜索supply
+    //代码完毕 已测试 待调试
     @RequestMapping("/querySupplyById")
     @ResponseBody
     public Supply querySupplyById(@RequestBody String jsonstr){
@@ -53,6 +63,7 @@ public class SupplyController {
         return supplyService.querySupplyById(supplyid);
     }
     //删除某个supply
+    //代码完毕 已测试 待调试
     @RequestMapping("/deleteSupply")
     @ResponseBody
     public void deleteSupply(@RequestBody String jsonstr){
@@ -60,6 +71,7 @@ public class SupplyController {
         supplyService.deleteSupply(supplyid);
     }
     //增加一个supply
+    //代码完毕 已测试 待调试
     @RequestMapping("/addSupply")
     @ResponseBody
     public void addSupply(@RequestBody String jsonstr){
@@ -67,13 +79,28 @@ public class SupplyController {
         System.out.print(supply);
         supplyService.addSupply(supply);
     }
-    //根性一个supply
+    //更改一个supply
+    //代码完毕 已测试 待调试
     @RequestMapping("/updateSupply")
     @ResponseBody
     public void updateSupply(@RequestBody String jsonstr){
         Supply supply = JSON.parseObject(jsonstr, new TypeReference<Supply>() {});
         System.out.print(supply);
         supplyService.updateSupply(supply);
+    }
+
+
+    //点开查看详情的时候会调用的，查询这个goods的Details
+    //代码完毕 未测试 待调试
+    @RequestMapping("/queryGoodsDetails")
+    @ResponseBody
+    public Supply querySupplyDetails(@RequestBody String jsonstr){
+        String supplyid=(String)JSON.parse(jsonstr);
+        SupplyDetails supplyDetails=supplyService.querySupplyDetails(supplyid);
+        Supply result=new Supply();
+        result=supplyService.querySupplyById(supplyid);
+        result.setSupplyDetails(supplyDetails);
+        return result;
     }
 
 }

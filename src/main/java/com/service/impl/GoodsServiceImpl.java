@@ -3,6 +3,7 @@ package com.service.impl;
 
 import com.dao.GoodsDao;
 import com.entity.Goods;
+import com.entity.GoodsDetails;
 import com.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,8 +56,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Goods queryGoodsDetailsById(String goodid) {
-        Goods result=goodsDao.queryGoodsDetailsById(goodid);
+    public GoodsDetails queryGoodsDetailsById(String goodid) {
+        GoodsDetails result=goodsDao.queryGoodsDetailsById(goodid);
         return result;
     }
 }

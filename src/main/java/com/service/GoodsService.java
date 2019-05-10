@@ -1,6 +1,7 @@
 package com.service;
 
 import com.entity.Goods;
+import com.entity.GoodsDetails;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -21,5 +22,5 @@ public interface GoodsService {
     //更新一个Good
      void updateGoods(Goods good);
     //点开查看详情的时候会调用的，查询这个good的remarks和Details
-    Goods queryGoodsDetailsById(String goodid);
+    GoodsDetails queryGoodsDetailsById(String goodid);
 }

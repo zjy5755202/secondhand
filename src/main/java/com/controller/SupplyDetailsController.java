@@ -24,28 +24,33 @@ public class SupplyDetailsController {
     @Autowired
     private SupplyDetailsService supplyDetailsService;
 
+    //代码完毕 未测试 待调试
     @RequestMapping("/addSupplyDetails")
     public void addSupplyDetails(@RequestBody String jsonstr) throws IOException {
         SupplyDetails supplyDetails = JSON.parseObject(jsonstr, new TypeReference<SupplyDetails>() {});
         supplyDetailsService.addSupplyDetails(supplyDetails);
     }
 
+    //代码完毕 未测试 待调试
     @RequestMapping("/updateSupplyDetails")
     public void updateSupplyDetails(@RequestBody String jsonstr) throws IOException {
         SupplyDetails supplyDetails = JSON.parseObject(jsonstr, new TypeReference<SupplyDetails>() {});
         supplyDetailsService.addSupplyDetails(supplyDetails);
     }
 
-
+    //代码完毕 未测试 待调试
     @RequestMapping("/querySupplyDetailsByid")
     @ResponseBody
-    public  SupplyDetails querySupplyDetailsByid(String suuplyid) throws IOException {
-        SupplyDetails result=supplyDetailsService.querySupplyDetailsById(suuplyid);
+    public  SupplyDetails querySupplyDetailsByid(@RequestBody String jsonstr) throws IOException {
+        String supplyid=(String)JSON.parse(jsonstr);
+        SupplyDetails result=supplyDetailsService.querySupplyDetailsById(supplyid);
         return result;
     }
 
+    //代码完毕 未测试 待调试
     @RequestMapping("/deleteSupplyDetailsByid")
-    public void deleteSupplyDetailsByid(String supplyid) throws IOException {
+    public void deleteSupplyDetailsByid(@RequestBody String jsonstr) throws IOException {
+        String supplyid=(String)JSON.parse(jsonstr);
         supplyDetailsService.deleteSupplyDetailsById(supplyid);
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SupplyCollectionDao">
+    <insert id="Star" parameterType="com.entity.SupplyCollection">
+        INSERT INTO user_supply_collections(userid,supplyid)
+        VALUES (#{userid},#{supplyid})
+    </insert>
+
+    <delete id="UnStar" parameterType="com.entity.SupplyCollection">
+        DELETE
+        FROM user_supply_collections
+        WHERE (userid=#{userid} AND goodsid = #{supplyid} )
+    </delete>
+
+</mapper>

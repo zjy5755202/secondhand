@@ -47,12 +47,14 @@ public class GoodsDetailsController {
     }
 
 
+
+    //代码完毕 未测试 待调试
     @RequestMapping("/queryGoodDetailsByid")
     public GoodsDetails queryGoodsDetailsByid(String goodid) throws IOException {
-        goodsDetailsService.queryGoodsDetailsById(goodid);
-        return null;
+        GoodsDetails result=goodsDetailsService.queryGoodsDetailsById(goodid);
+        return result;
     }
-
+    //代码完毕 未测试 待调试
     @RequestMapping("/deleteGoodsDetailsByid")
     public void deleteGoodsDetailsByid(String goodid) throws IOException {
         goodsDetailsService.deleteGoodsDetailsById(goodid);
