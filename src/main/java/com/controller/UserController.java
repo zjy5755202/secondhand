@@ -4,25 +4,16 @@ package com.controller;
 import java.io.IOException;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.User;
 import com.redis.Redis;
 import com.service.UserService;
 import com.util.SocketToPython;
-import com.util.SocketToPython1;
 import com.util.UUIDGenerrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import redis.clients.jedis.Jedis;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -40,18 +31,23 @@ public class UserController {
           User user;
           //System.out.println(jsonstr);
           user = JSON.parseObject(jsonstr, new TypeReference<User>() {});
-          String username=user.getUserid();
+          String nickname=user.getNickname();
+          String avatar=user.getAvatar();
+          String userid=user.getUserid();
           String password=user.getPassword();
-          String param="id="+username+"&password="+password;
-          JSONObject object= SocketToPython1.sendGet(param);
-//        JSONObject object= SocketToPython1.getLoginState(jsonstr);
+          String param="id="+userid+"&password="+password;
+          JSONObject object= SocketToPython.sendGet(param);
           String state=object.getString("state");
         //登陆失败
         if(state=="false") {
-            return user;
+            return null;
         }
-        JSONObject userInfo=(JSONObject) object.get("user");
-        user=JSON.toJavaObject(userInfo,User.class);
+        user=JSON.parseObject(object.get("data").toString(), new TypeReference<User>() {});
+        user.setUserid(userid);
+//        user.setAvatar(avatar);
+//        user.setNickname(nickname);
+        user.setAvatar("localhost/temp/100");
+        user.setNickname("master");
         //说明此用户是第一次使用我们的系统
         if(userService.queryById(user.getUserid())==null){
             userService.addUser(user);
@@ -61,15 +57,16 @@ public class UserController {
         //生成uuid 然后把uuid和username关联放到redis
         String curUUID= UUIDGenerrator.getUUID();
         System.out.println(curUUID);
-//        redis.set(curUUID,user.getUserid());
-////        //然后把user的id设置为生成的那个uuid返回给前端
-//        user.setUserid(curUUID);
+        redis.set(curUUID,user.getUserid());
+//        //然后把user的id设置为生成的那个uuid返回给前端
+        user.setUserid(curUUID);
         return user;
     }
 
     //代码完毕 待调试
     @RequestMapping("/outLogin")
-    public void outLogin(@RequestBody String useruuid){
+    public void outLogin(@RequestBody String jsonstr){
+        String useruuid=(String)JSONObject.parse(jsonstr);
         redis.del(useruuid);
     }
 

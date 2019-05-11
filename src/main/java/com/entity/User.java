@@ -10,7 +10,7 @@ public class User {
     //真实姓名
     private String name;
     //性别
-    private char gender;
+    private String gender;
     //年级
     private int grade;
     //学院
@@ -52,11 +52,11 @@ public class User {
         this.name = name;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

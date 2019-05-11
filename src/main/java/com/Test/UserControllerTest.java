@@ -40,12 +40,13 @@ public class UserControllerTest {
     }
 
 
+    //已测试 成功通过
     @Test
     public void testLogin() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         User user=new User();
-        user.setUserid("2016302580007");
-        user.setPassword("164815");
+        user.setUserid("2016302580188");
+        user.setPassword("19980705");
         String json=mapper.writeValueAsString(user);
         System.out.println("before----------------post");
         System.out.println(json.toString());
@@ -55,6 +56,22 @@ public class UserControllerTest {
         String result = mvcResult.getResponse().getContentAsString();
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
+
+    //已测试  成功通过
+    @Test
+    public void testoutLogin() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String useruuid="f628f9e5f27d4b6b966062193fad3239";
+        String json=mapper.writeValueAsString(useruuid);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/user/outLogin").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
 
 
 
@@ -68,7 +85,7 @@ public class UserControllerTest {
         user.setAvatar("....");
         user.setNickname("test3");
         user.setName("杨浩麟");
-        user.setGender('男');
+        user.setGender("男");
         user.setGrade(2016);
         user.setSchool("计算机学院");
         user.setMajor("软件工程");
@@ -92,7 +109,7 @@ public class UserControllerTest {
         user.setAvatar("....");
         user.setNickname("hh");
         user.setName("朱江源");
-        user.setGender('男');
+        user.setGender("男");
         user.setGrade(2016);
         user.setSchool("计算机学院");
         user.setMajor("软件工程");
