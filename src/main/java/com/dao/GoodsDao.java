@@ -6,6 +6,8 @@ import com.entity.GoodsDetails;
 import java.util.List;
 
 public interface GoodsDao {
+    //根据时间选取一定Goods
+    List<Goods> queryGoodsByTime();
     //根据Title查询Goods
      List<Goods> queryGoodsByName(String name);
     //查看某个用户收藏的Goods

@@ -1,12 +1,15 @@
 package com.entity;
 
 
+import java.sql.Timestamp;
+
 public class SupplyDetails {
     private int supplyid;
     private String images;
     private String description;
     private int collections;
     private String contact;
+    private Timestamp createAt;
 
     public int getSupplyid() {
         return supplyid;
@@ -46,5 +49,13 @@ public class SupplyDetails {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public Timestamp getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Timestamp createAt) {
+        this.createAt = createAt;
     }
 }

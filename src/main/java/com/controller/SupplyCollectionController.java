@@ -6,17 +6,21 @@ import com.entity.SupplyCollection;
 import com.redis.Redis;
 import com.service.SupplyCollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+@Controller
+@RequestMapping("/SupplyCollection")
 public class SupplyCollectionController {
     @Autowired
     private Redis redis;
     @Autowired
     private SupplyCollectionService supplyCollectionService;
 
-    @RequestMapping("/star")
+    @RequestMapping("/Star")
     @ResponseBody
     public void Star(@RequestBody String jsonstr){
         JSONObject object=(JSONObject) JSON.parse(jsonstr);
@@ -26,7 +30,7 @@ public class SupplyCollectionController {
         supplyCollectionService.Star(new SupplyCollection(userid,supplyid));
     }
 
-    @RequestMapping("/unstar")
+    @RequestMapping("/Unstar")
     @ResponseBody
     public void UnStar(@RequestBody String jsonstr){
         JSONObject object=(JSONObject) JSON.parse(jsonstr);

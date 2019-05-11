@@ -21,7 +21,7 @@ public class GoodsCollectionController {
     @Autowired
     private GoodsCollectionService goodsCollectionService;
 
-    @RequestMapping("/star")
+    @RequestMapping("/Star")
     @ResponseBody
     public void Star(@RequestBody String jsonstr){
         JSONObject object=(JSONObject) JSON.parse(jsonstr);
@@ -31,7 +31,7 @@ public class GoodsCollectionController {
         goodsCollectionService.Star(new GoodsCollection(userid,goodsid));
     }
 
-    @RequestMapping("/unstar")
+    @RequestMapping("/Unstar")
     @ResponseBody
     public void UnStar(@RequestBody String jsonstr){
         JSONObject object=(JSONObject) JSON.parse(jsonstr);

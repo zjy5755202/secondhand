@@ -6,6 +6,8 @@ import com.entity.SupplyDetails;
 import java.util.List;
 
 public interface SupplyService {
+    //首页加载所需Supply
+    List<Supply> querySupplyByTime();
     //根据Title查询Supply
     List<Supply> querySupplyByTitle(String title);
     //查看某个用户收藏的Supply

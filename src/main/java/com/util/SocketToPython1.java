@@ -18,7 +18,6 @@ public class SocketToPython1 {
             PrintStream out=new PrintStream(os);
             out.print(jsonstr);
             //out.print("over");
-
             InputStream is=socket.getInputStream();
             BufferedReader br=new BufferedReader(new InputStreamReader(is,"utf-8"));
             String tmp=null;

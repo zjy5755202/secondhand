@@ -25,6 +25,16 @@ public class SupplyController {
     @Autowired
     private Redis redis;
 
+
+    //首页加载所需要的Supply
+    //代码完毕 未测试 待调试
+    @RequestMapping("/querySupplyByTime")
+    @ResponseBody
+    public List<Supply> querySupplyByTime(){
+        List<Supply> result=supplyService.querySupplyByTime();
+        return result;
+    }
+
     //根据title搜索supply
     //代码完毕 未测试 待调试
     @RequestMapping("/querySupplyByTitle")
@@ -39,7 +49,8 @@ public class SupplyController {
     //代码完毕 未测试 待调试
     @RequestMapping("/queryUserCollectionSupply")
     public List<Supply> queryUserCollectionSupply(@RequestBody String jsonstr){
-        String userid=(String)JSON.parse(jsonstr);
+        String tempuserid=(String)JSON.parse(jsonstr);
+        String userid=redis.get(tempuserid);
         List<Supply> result=supplyService.queryUserCollectionSupply(userid);
         return result;
     }
@@ -49,7 +60,8 @@ public class SupplyController {
     @RequestMapping("/queryUserPublishSupply")
     @ResponseBody
     public List<Supply> queryUserPublishSupply(@RequestBody String jsonstr){
-        String userid=(String)JSON.parse(jsonstr);
+        String tempuserid=(String)JSON.parse(jsonstr);
+        String userid=redis.get(tempuserid);
         List<Supply> result=supplyService.queryUserPublishSupply(userid);
         return result;
     }
@@ -92,13 +104,12 @@ public class SupplyController {
 
     //点开查看详情的时候会调用的，查询这个goods的Details
     //代码完毕 未测试 待调试
-    @RequestMapping("/queryGoodsDetails")
+    @RequestMapping("/querySupplyDetails")
     @ResponseBody
     public Supply querySupplyDetails(@RequestBody String jsonstr){
         String supplyid=(String)JSON.parse(jsonstr);
         SupplyDetails supplyDetails=supplyService.querySupplyDetails(supplyid);
-        Supply result=new Supply();
-        result=supplyService.querySupplyById(supplyid);
+        Supply result=supplyService.querySupplyById(supplyid);
         result.setSupplyDetails(supplyDetails);
         return result;
     }

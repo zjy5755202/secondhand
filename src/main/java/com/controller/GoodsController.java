@@ -26,6 +26,14 @@ public class GoodsController {
     @Autowired
     private Redis redis;
 
+    //首页加载的时候按照时间来挑选一定的goods
+    @RequestMapping("/queryGoodsByTime")
+    @ResponseBody
+    public List<Goods> queryGoodsByTime(){
+        List<Goods> result=goodsService.queryGoodsByTime();
+        return result;
+    }
+
     //根据标题搜索Goods
     //代码完毕 已测试 待调试
     @RequestMapping("/queryGoodsByName")
@@ -41,7 +49,8 @@ public class GoodsController {
     @RequestMapping("/queryUserCollectionGoods")
     @ResponseBody
     public List<Goods> queryUserCollectionGoods(@RequestBody String jsonstr){
-        String userid=(String)JSON.parse(jsonstr);
+        String tempuserid=(String)JSON.parse(jsonstr);
+        String userid=redis.get(tempuserid);
         List<Goods> result=goodsService.queryUserCollectionGoods(userid);
         return result;
     }
@@ -51,7 +60,8 @@ public class GoodsController {
     @RequestMapping("/queryUserPublishGoods")
     @ResponseBody
     public List<Goods> queryUserPublishGoods(@RequestBody String jsonstr){
-        String userid=(String)JSON.parse(jsonstr);
+        String tempuserid=(String)JSON.parse(jsonstr);
+        String userid=redis.get(tempuserid);
         List<Goods> result=goodsService.queryUserPublishGoods(userid);
         return result;
     }
@@ -100,8 +110,7 @@ public class GoodsController {
     public Goods queryGoodsDetails(@RequestBody String jsonstr){
         String goodsid=(String)JSON.parse(jsonstr);
         GoodsDetails goodsDetails=goodsService.queryGoodsDetailsById(goodsid);
-        Goods result=new Goods();
-        result=goodsService.queryGoodsById(goodsid);
+        Goods result=goodsService.queryGoodsById(goodsid);
         result.setGoodsDetails(goodsDetails);
         return result;
     }

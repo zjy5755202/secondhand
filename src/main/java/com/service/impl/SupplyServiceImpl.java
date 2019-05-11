@@ -19,6 +19,12 @@ public class SupplyServiceImpl implements SupplyService {
     private SupplyDao supplyDao;
 
     @Override
+    public List<Supply> querySupplyByTime() {
+        List<Supply> result=supplyDao.querySupplyByTime();
+        return result;
+    }
+
+    @Override
     public List<Supply> querySupplyByTitle(String title) {
         List<Supply> result=supplyDao.querySupplyByTitle(title);
         return result;

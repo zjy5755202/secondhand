@@ -1,5 +1,6 @@
 package com.entity;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Goods {
@@ -14,7 +15,7 @@ public class Goods {
     //商品价格
     private double price;
     //发布时间
-    private Date createAt;
+    private Timestamp createAt;
     //该商品的详情
     private GoodsDetails goodsDetails;
 
@@ -58,11 +59,11 @@ public class Goods {
         this.price = price;
     }
 
-    public Date getCreateAt() {
+    public Timestamp getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(Date createAt) {
+    public void setCreateAt(Timestamp createAt) {
         this.createAt = createAt;
     }
 

@@ -1,6 +1,7 @@
 package com.entity;
 
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class GoodsDetails {
@@ -9,7 +10,7 @@ public class GoodsDetails {
     private String description;
     private int collections;
     private String contact;
-    private Date createAt;
+    private Timestamp createAt;
 
     public int getGoodsid() {
         return goodsid;
@@ -52,11 +53,11 @@ public class GoodsDetails {
         this.contact = contact;
     }
 
-    public Date getCreateAt() {
+    public Timestamp getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(Date createAt) {
+    public void setCreateAt(Timestamp createAt) {
         this.createAt = createAt;
     }
 }

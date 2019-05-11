@@ -1,5 +1,6 @@
 package com.entity;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Supply {
@@ -14,9 +15,9 @@ public class Supply {
     //薪酬
     private double price;
     //发布时间
-    private Date createAt;
+    private Timestamp createAt;
     //过期时间
-    private Date expires;
+    private Timestamp expires;
     //该需求的详情
     private SupplyDetails supplyDetails;
 
@@ -60,19 +61,19 @@ public class Supply {
         this.price = price;
     }
 
-    public Date getCreateAt() {
+    public Timestamp getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(Date createAt) {
+    public void setCreateAt(Timestamp createAt) {
         this.createAt = createAt;
     }
 
-    public Date getExpires() {
+    public Timestamp getExpires() {
         return expires;
     }
 
-    public void setExpires(Date expires) {
+    public void setExpires(Timestamp expires) {
         this.expires = expires;
     }
 
