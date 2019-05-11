@@ -14,12 +14,11 @@ public class SupplyDetailsServiceImpl implements SupplyDetailsService {
 
     @Override
     public int addSupplyDetails(SupplyDetails supplyDetails) {
-
         return supplyDetailsDao.addSupplyDetails(supplyDetails);
     }
 
     @Override
-    public int deleteSupplyDetailsById(String supplyid) {
+    public int deleteSupplyDetailsById(int supplyid) {
         return supplyDetailsDao.deleteSupplyDetailsById(supplyid);
     }
 
@@ -29,7 +28,7 @@ public class SupplyDetailsServiceImpl implements SupplyDetailsService {
     }
 
     @Override
-    public SupplyDetails querySupplyDetailsById(String supplyid) {
+    public SupplyDetails querySupplyDetailsById(int supplyid) {
         return supplyDetailsDao.querySupplyDetailsById(supplyid);
     }
 }

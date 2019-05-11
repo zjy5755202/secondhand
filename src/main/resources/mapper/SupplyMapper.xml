@@ -30,7 +30,7 @@
     <select id="queryUserPublishSupply" resultType="com.entity.Supply" parameterType="java.lang.String">
     SELECT *
     FROM supply
-    WHERE supplyid=#{supplyid}
+    WHERE userid=#{userid}
     </select>
 
     <select id="querySupplyById" parameterType="String" resultType="Supply">

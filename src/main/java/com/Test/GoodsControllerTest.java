@@ -166,10 +166,19 @@ public class GoodsControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //未测试
+    //已测试 成功通过
     @Test
     public void testqueryGoodDetails() throws Exception {
-
+        ObjectMapper mapper=new ObjectMapper();
+        String goodsid="10000";
+        String json=mapper.writeValueAsString(goodsid);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
 

@@ -55,7 +55,7 @@ public class SupplyDetailControllerTest {
         String json=mapper.writeValueAsString(supplyDetails);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/SupplyDetails/addSupplyDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();
@@ -75,7 +75,7 @@ public class SupplyDetailControllerTest {
         String json=mapper.writeValueAsString(supplyDetails);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/SupplyDetails/updateSupplyDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();
@@ -90,7 +90,7 @@ public class SupplyDetailControllerTest {
         String json=mapper.writeValueAsString(supplyid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/SupplyDetails/deleteSupplyDetailsById").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();
@@ -105,7 +105,7 @@ public class SupplyDetailControllerTest {
         String json=mapper.writeValueAsString(supplyid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/SupplyDetails/querySupplyDetailsById").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();

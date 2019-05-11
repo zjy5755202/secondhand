@@ -45,7 +45,30 @@ public class SupplyControllerTest {
         System.out.println("movkMvc-Initial");
     }
 
-    //已测试
+
+    //已测试 成功通过
+    @Test
+    public void testaddSupply() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        Supply supply=new Supply();
+        supply.setSupplyid(10003);
+        supply.setUserid("2016302580190");
+        supply.setCover(".....");
+        supply.setTitle("190supply1");
+        supply.setPrice(10.0);
+        Timestamp time = new Timestamp(new Date().getTime());
+        supply.setExpires(time);
+        String json=mapper.writeValueAsString(supply);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/addSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //已测试 成功通过
     @Test
     public void testquerySupplyById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -60,11 +83,12 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
+
+    //已测试 成功通过
     @Test
     public void testdeleteSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        String supplyId="10000";
+        String supplyId="10003";
         String json=mapper.writeValueAsString(supplyId);
         System.out.println("before----------------post");
         System.out.println(json.toString());
@@ -75,50 +99,20 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
-    @Test
-    public void testaddSupply() throws Exception {
-        ObjectMapper mapper=new ObjectMapper();
-        Supply supply=new Supply();
-        supply.setSupplyid(10000);
-        supply.setUserid("2016302580188");
-        supply.setCover("000000");
-        supply.setTitle("00000");
-        supply.setPrice(10.0);
-//        String sToTimestamp = "2005-8-18 14:21:12.123"
-//        String strDate="2005年04月22日";
-//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
-//        Date date = simpleDateFormat.parse(strDate);
-        Timestamp time = new Timestamp(new Date().getTime());
-        supply.setExpires(time);
 
-        String json=mapper.writeValueAsString(supply);
-        System.out.println("before----------------post");
-        System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/addSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
-        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-        System.out.println("after---------------------post");
-        String result = mvcResult.getResponse().getContentAsString();
-        System.out.println("==========结果为：==========\n" + result + "\n");
-    }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testupdateSupply() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Supply supply=new Supply();
-        supply.setSupplyid(10000);
-        supply.setUserid("2016302580188");
-        supply.setCover("11111111");
-        supply.setTitle("00000");
+        supply.setSupplyid(10003);
+        supply.setUserid("2016302580190");
+        supply.setCover(".");
+        supply.setTitle("190supply1");
         supply.setPrice(20.0);
-//        String strDate="2005年04月22日";
-//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
-//        Date date = simpleDateFormat.parse(strDate);
-
         Timestamp time = new Timestamp(new Date().getTime());
         supply.setExpires(time);
-
         String json=mapper.writeValueAsString(supply);
         System.out.println("before----------------post");
         System.out.println(json.toString());
@@ -128,4 +122,79 @@ public class SupplyControllerTest {
         String result = mvcResult.getResponse().getContentAsString();
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
+
+    //已测试 成功通过
+    @Test
+    public void testquerySupplyByTime() throws Exception {
+        System.out.println("before----------------post");
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/querySupplyByTime").contentType("application/json;charset=UTF-8").accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //已测试 成功通过
+    @Test
+    public void testquerySupplyByTitle() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String title="supply1";
+        String json=mapper.writeValueAsString(title);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/querySupplyByTitle").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //已测试 成功通过
+    @Test
+    public void testqueryUserCollectionSupply() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String userid="2016302580189";
+        String json=mapper.writeValueAsString(userid);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/queryUserCollectionSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //已测试 成功通过
+    @Test
+    public void testqueryUserPublishSupply() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String userid="2016302580188";
+        String json=mapper.writeValueAsString(userid);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/queryUserPublishSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+    //未测试
+    @Test
+    public void testquerySupplyDetails() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String supplyid="10000";
+        String json=mapper.writeValueAsString(supplyid);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/queryUserPublishSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+
+
+
 }

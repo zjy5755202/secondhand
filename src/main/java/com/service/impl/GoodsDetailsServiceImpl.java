@@ -14,22 +14,22 @@ public class GoodsDetailsServiceImpl implements GoodsDetailsService {
 
 
     @Override
-    public int addGoodsDetails(GoodsDetails goodsDetails) {
-        return goodsDetailsDao.addGoodsDetails(goodsDetails);
+    public void addGoodsDetails(GoodsDetails goodsDetails) {
+         goodsDetailsDao.addGoodsDetails(goodsDetails);
     }
 
     @Override
-    public int deleteGoodsDetailsById(String goodsId) {
-        return goodsDetailsDao.deleteGoodsDetailsById(goodsId);
+    public void deleteGoodsDetailsById(int goodsId) {
+         goodsDetailsDao.deleteGoodsDetailsByid(goodsId);
     }
 
     @Override
-    public int updateGoodsDetails(GoodsDetails goodsDetails) {
-        return goodsDetailsDao.updateGoodsDetails(goodsDetails);
+    public void updateGoodsDetails(GoodsDetails goodsDetails) {
+         goodsDetailsDao.updateGoodsDetails(goodsDetails);
     }
 
     @Override
-    public GoodsDetails queryGoodsDetailsById(String goodsId) {
+    public GoodsDetails queryGoodsDetailsById(int goodsId) {
         return goodsDetailsDao.queryGoodsDetailsById(goodsId);
     }
 }

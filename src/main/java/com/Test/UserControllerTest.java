@@ -39,6 +39,26 @@ public class UserControllerTest {
         System.out.println("movkMvc-Initial");
     }
 
+
+    @Test
+    public void testLogin() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        User user=new User();
+        user.setUserid("2016302580007");
+        user.setPassword("164815");
+        String json=mapper.writeValueAsString(user);
+        System.out.println("before----------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/user/checkLogin").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
+
+
+
+
     //已测试 成功通过
     @Test
     public void testaddUser() throws Exception {

@@ -1,11 +1,15 @@
 package com.controller;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.entity.GoodsDetails;
 import com.service.GoodsDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 
@@ -17,7 +21,8 @@ public class GoodsDetailsController {
     private GoodsDetailsService goodsDetailsService;
 
     @RequestMapping("/addGoodsDetails")
-    public String addGoodsDetails(GoodsDetails goodDetails) throws IOException {
+    @ResponseBody
+    public void addGoodsDetails(@RequestBody String jsonstr) throws IOException {
 //        //保存数据库的路径
 //        String sqlPath = null;
 //        //定义文件保存的本地路径
@@ -43,21 +48,29 @@ public class GoodsDetailsController {
 //        goodDetails.setImgs(sqlPath);
 //        goodDetailsDao.addGoodDetails(goodDetails);
 //        return "Success";
-            return null;
+
+        //测试用
+        GoodsDetails goodsDetails = JSON.parseObject(jsonstr, new TypeReference<GoodsDetails>() {});
+        goodsDetailsService.addGoodsDetails(goodsDetails);
+
     }
 
 
 
     //代码完毕 未测试 待调试
-    @RequestMapping("/queryGoodDetailsByid")
-    public GoodsDetails queryGoodsDetailsByid(String goodid) throws IOException {
-        GoodsDetails result=goodsDetailsService.queryGoodsDetailsById(goodid);
+    @RequestMapping("/queryGoodsDetailsByid")
+    @ResponseBody
+    public GoodsDetails queryGoodsDetailsByid(@RequestBody String jsonstr) throws IOException {
+        int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
+        GoodsDetails result=goodsDetailsService.queryGoodsDetailsById(goodsid);
         return result;
     }
     //代码完毕 未测试 待调试
     @RequestMapping("/deleteGoodsDetailsByid")
-    public void deleteGoodsDetailsByid(String goodid) throws IOException {
-        goodsDetailsService.deleteGoodsDetailsById(goodid);
+    @ResponseBody
+    public void deleteGoodsDetailsByid(@RequestBody String jsonstr) throws IOException {
+        int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
+        goodsDetailsService.deleteGoodsDetailsById(goodsid);
     }
 
 

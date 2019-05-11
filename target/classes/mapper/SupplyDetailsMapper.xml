@@ -5,26 +5,26 @@
 
 <mapper namespace="com.dao.SupplyDetailsDao">
 
-    <insert id="addSupplyDetails" parameterType="SupplyDetails">
-        INSERT INTO SupplyDetails(supplyid, images, description, collections, contact)
+    <insert id="addSupplyDetails" parameterType="com.entity.SupplyDetails">
+        INSERT INTO supply_details(supplyid, images, description, collections, contact)
         VALUES (#{supplyid}, #{images}, #{description}, #{collections},#{contact})
     </insert>
 
-    <delete id="deleteSupplyDetailsById" parameterType="String">
-        DELETE FROM SupplyDetails
+    <delete id="deleteSupplyDetailsById" parameterType="int">
+        DELETE FROM supply_details
         WHERE supplyid = #{supplyid}
     </delete>
 
-    <update id="updateSupplyDetails" parameterType="SupplyDetails">
-        UPDATE SupplyDetails SET
+    <update id="updateSupplyDetails" parameterType="com.entity.SupplyDetails">
+        UPDATE supply_details SET
         images = #{images},
         description = #{description},
         collections = #{collections},
         contact = #{contact}
     </update>
 
-    <select id="querySupplyDetailsById" parameterType="String" resultType="SupplyDetails">
-        SELECT * FROM SupplDetails
+    <select id="querySupplyDetailsById" parameterType="int" resultType="com.entity.SupplyDetails">
+        SELECT * FROM supply_details
         WHERE supplyid = #{supplyid}
     </select>
 </mapper>

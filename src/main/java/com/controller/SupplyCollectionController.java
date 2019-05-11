@@ -2,6 +2,7 @@ package com.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.entity.SupplyCollection;
 import com.redis.Redis;
 import com.service.SupplyCollectionService;
@@ -23,21 +24,29 @@ public class SupplyCollectionController {
     @RequestMapping("/Star")
     @ResponseBody
     public void Star(@RequestBody String jsonstr){
-        JSONObject object=(JSONObject) JSON.parse(jsonstr);
-        String tempuserid=(String)object.get("userid");
-        String userid=redis.get(tempuserid);
-        int supplyid=(int)object.get("goodsid");
-        supplyCollectionService.Star(new SupplyCollection(userid,supplyid));
+//        JSONObject object=(JSONObject) JSON.parse(jsonstr);
+//        String tempuserid=(String)object.get("userid");
+//        String userid=redis.get(tempuserid);
+//        int supplyid=(int)object.get("goodsid");
+//        supplyCollectionService.Star(new SupplyCollection(userid,supplyid));
+
+        //测试使用的代码
+        SupplyCollection supplyCollection = JSON.parseObject(jsonstr, new TypeReference<SupplyCollection>() {});
+        supplyCollectionService.Star(supplyCollection);
     }
 
-    @RequestMapping("/Unstar")
+    @RequestMapping("/UnStar")
     @ResponseBody
     public void UnStar(@RequestBody String jsonstr){
-        JSONObject object=(JSONObject) JSON.parse(jsonstr);
-        String tempuserid=(String)object.get("userid");
-        String userid=redis.get(tempuserid);
-        int supplyid=(int)object.get("goodsid");
-        supplyCollectionService.UnStar(new SupplyCollection(userid,supplyid));
+//        JSONObject object=(JSONObject) JSON.parse(jsonstr);
+//        String tempuserid=(String)object.get("userid");
+//        String userid=redis.get(tempuserid);
+//        int supplyid=(int)object.get("goodsid");
+//        supplyCollectionService.UnStar(new SupplyCollection(userid,supplyid));
+
+        //测试使用的代码
+        SupplyCollection supplyCollection = JSON.parseObject(jsonstr, new TypeReference<SupplyCollection>() {});
+        supplyCollectionService.UnStar(supplyCollection);
     }
 
 }

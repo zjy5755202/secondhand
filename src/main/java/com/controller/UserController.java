@@ -37,12 +37,14 @@ public class UserController {
     @RequestMapping("/checkLogin")
     public @ResponseBody User checkLogin(@RequestBody String jsonstr) throws IOException {
         //socket通信调用python 然后返回一个json格式的user数据
-          User user=new User();
+          User user;
           //System.out.println(jsonstr);
           user = JSON.parseObject(jsonstr, new TypeReference<User>() {});
           String username=user.getUserid();
           String password=user.getPassword();
-          JSONObject object= SocketToPython1.getLoginState(jsonstr);
+          String param="id="+username+"&password="+password;
+          JSONObject object= SocketToPython1.sendGet(param);
+//        JSONObject object= SocketToPython1.getLoginState(jsonstr);
           String state=object.getString("state");
         //登陆失败
         if(state=="false") {
@@ -59,9 +61,9 @@ public class UserController {
         //生成uuid 然后把uuid和username关联放到redis
         String curUUID= UUIDGenerrator.getUUID();
         System.out.println(curUUID);
-        redis.set(curUUID,user.getUserid());
-//        //然后把user的id设置为生成的那个uuid返回给前端
-        user.setUserid(curUUID);
+//        redis.set(curUUID,user.getUserid());
+////        //然后把user的id设置为生成的那个uuid返回给前端
+//        user.setUserid(curUUID);
         return user;
     }
 

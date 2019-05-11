@@ -12,7 +12,7 @@
     <delete id="UnStar" parameterType="com.entity.SupplyCollection">
         DELETE
         FROM user_supply_collections
-        WHERE (userid=#{userid} AND goodsid = #{supplyid} )
+        WHERE (userid=#{userid} AND supplyid = #{supplyid} )
     </delete>
 
 </mapper>

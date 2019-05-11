@@ -5,19 +5,19 @@
 
 <mapper namespace="com.dao.GoodsDetailsDao">
 
-    <insert id="addGoodDetails" parameterType="GoodsDetails">
-        INSERT INTO GoodDetails(goodsid, images, description, collections, contact, createAt)
+    <insert id="addGoodsDetails" parameterType="com.entity.GoodsDetails">
+        INSERT INTO goods_details(goodsid, images, description, collections, contact, createAt)
         VALUES (#{goodsid}, #{images}, #{description}, #{collections}, #{contact}, now())
     </insert>
 
-    <delete id="deleteGoodDetailsById" parameterType="GoodsDetails">
+    <delete id="deleteGoodsDetailsByid" parameterType="Integer">
         DELETE
-        FROM GoodDetails
+        FROM goods_details
         WHERE goodsid = #{goodsid}
     </delete>
 
-    <update id="updateGoodDetails" parameterType="GoodsDetails">
-        UPDATE GoodDetails SET
+    <update id="updateGoodDetails" parameterType="com.entity.GoodsDetails">
+        UPDATE goods_details SET
         images = #{images},
         description = #{description},
         collections = #{collections},
@@ -25,9 +25,9 @@
         WHERE goodsid = #{goodsid}
     </update>
 
-    <select id="queryGoodDetailsById" parameterType="String" resultType="GoodsDetails">
+    <select id="queryGoodsDetailsById" parameterType="Integer" resultType="com.entity.GoodsDetails">
         SELECT * FROM
-        GoodDetails
+        goods_details
         WHERE goodsid = #{goodsid}
     </select>
 

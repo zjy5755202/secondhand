@@ -48,9 +48,14 @@ public class SupplyController {
     //搜索某用户的supply收藏
     //代码完毕 未测试 待调试
     @RequestMapping("/queryUserCollectionSupply")
+    @ResponseBody
     public List<Supply> queryUserCollectionSupply(@RequestBody String jsonstr){
-        String tempuserid=(String)JSON.parse(jsonstr);
-        String userid=redis.get(tempuserid);
+//        String tempuserid=(String)JSON.parse(jsonstr);
+//        String userid=redis.get(tempuserid);
+//        List<Supply> result=supplyService.queryUserCollectionSupply(userid);
+//        return result;
+        //测试用
+        String userid=(String)JSON.parse(jsonstr);
         List<Supply> result=supplyService.queryUserCollectionSupply(userid);
         return result;
     }
@@ -60,10 +65,16 @@ public class SupplyController {
     @RequestMapping("/queryUserPublishSupply")
     @ResponseBody
     public List<Supply> queryUserPublishSupply(@RequestBody String jsonstr){
-        String tempuserid=(String)JSON.parse(jsonstr);
-        String userid=redis.get(tempuserid);
+//        String tempuserid=(String)JSON.parse(jsonstr);
+//        String userid=redis.get(tempuserid);
+//        List<Supply> result=supplyService.queryUserPublishSupply(userid);
+//        return result;
+
+        //测试用
+        String userid=(String)JSON.parse(jsonstr);
         List<Supply> result=supplyService.queryUserPublishSupply(userid);
         return result;
+
     }
 
     //根据supplyid搜索supply
