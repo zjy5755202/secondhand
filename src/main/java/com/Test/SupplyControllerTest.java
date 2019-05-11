@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -84,10 +85,13 @@ public class SupplyControllerTest {
         supply.setCover("000000");
         supply.setTitle("00000");
         supply.setPrice(10.0);
-        String strDate="2005年04月22日";
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
-        Date date = simpleDateFormat.parse(strDate);
-        supply.setExpires(date);
+//        String sToTimestamp = "2005-8-18 14:21:12.123"
+//        String strDate="2005年04月22日";
+//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
+//        Date date = simpleDateFormat.parse(strDate);
+        Timestamp time = new Timestamp(new Date().getTime());
+        supply.setExpires(time);
+
         String json=mapper.writeValueAsString(supply);
         System.out.println("before----------------post");
         System.out.println(json.toString());
@@ -108,10 +112,13 @@ public class SupplyControllerTest {
         supply.setCover("11111111");
         supply.setTitle("00000");
         supply.setPrice(20.0);
-        String strDate="2005年04月22日";
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
-        Date date = simpleDateFormat.parse(strDate);
-        supply.setExpires(date);
+//        String strDate="2005年04月22日";
+//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
+//        Date date = simpleDateFormat.parse(strDate);
+
+        Timestamp time = new Timestamp(new Date().getTime());
+        supply.setExpires(time);
+
         String json=mapper.writeValueAsString(supply);
         System.out.println("before----------------post");
         System.out.println(json.toString());

@@ -49,8 +49,13 @@ public class GoodsController {
     @RequestMapping("/queryUserCollectionGoods")
     @ResponseBody
     public List<Goods> queryUserCollectionGoods(@RequestBody String jsonstr){
-        String tempuserid=(String)JSON.parse(jsonstr);
-        String userid=redis.get(tempuserid);
+//        String tempuserid=(String)JSON.parse(jsonstr);
+//        String userid=redis.get(tempuserid);
+//        List<Goods> result=goodsService.queryUserCollectionGoods(userid);
+//        return result;
+
+        //测试使用
+        String userid=(String)JSON.parse(jsonstr);
         List<Goods> result=goodsService.queryUserCollectionGoods(userid);
         return result;
     }
@@ -60,10 +65,16 @@ public class GoodsController {
     @RequestMapping("/queryUserPublishGoods")
     @ResponseBody
     public List<Goods> queryUserPublishGoods(@RequestBody String jsonstr){
-        String tempuserid=(String)JSON.parse(jsonstr);
-        String userid=redis.get(tempuserid);
+//        String tempuserid=(String)JSON.parse(jsonstr);
+//        String userid=redis.get(tempuserid);
+//        List<Goods> result=goodsService.queryUserPublishGoods(userid);
+//        return result;
+
+        //测试使用
+        String userid=(String)JSON.parse(jsonstr);
         List<Goods> result=goodsService.queryUserPublishGoods(userid);
         return result;
+
     }
 
     //根据goodid来搜索Good

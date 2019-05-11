@@ -25,8 +25,8 @@
     <select id="queryUserCollectionGoods" resultType="com.entity.Goods" parameterType="java.lang.String">
     SELECT *
     FROM goods
-    WHERE goodsid =
-    (SELECT goosid FROM user_goods_collections where userid = #{userid} )
+    WHERE goodsid IN
+    (SELECT goodsid FROM user_goods_collections where userid = #{userid} )
     </select>
 
 <!--    //查看某个用户发布的Goods-->

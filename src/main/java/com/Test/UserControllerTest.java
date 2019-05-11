@@ -39,15 +39,15 @@ public class UserControllerTest {
         System.out.println("movkMvc-Initial");
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testaddUser() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         User user=new User();
-        user.setUserid("2016302580188");
+        user.setUserid("2016302580190");
         user.setAvatar("....");
-        user.setNickname("master");
-        user.setName("朱江源");
+        user.setNickname("test3");
+        user.setName("杨浩麟");
         user.setGender('男');
         user.setGrade(2016);
         user.setSchool("计算机学院");
@@ -63,7 +63,7 @@ public class UserControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testupdateUser() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -88,7 +88,7 @@ public class UserControllerTest {
     }
 
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testqueryUserById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();

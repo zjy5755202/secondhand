@@ -39,8 +39,18 @@ public class GoodsControllerTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(goodController).build();
         System.out.println("movkMvc-Initial");
     }
+    //已测试 成功通过
+    @Test
+    public void testqueryGoodsByTime() throws Exception {
+        System.out.println("before--------------------post");
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsByTime").contentType("application/json;charset=UTF-8").accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
+    }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testqueryGoodsByName() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -55,37 +65,37 @@ public class GoodsControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //未测试
+    //已测试  成功通过
     @Test
-    public void testqueryUserCollectionGood() throws Exception {
-//        ObjectMapper mapper=new ObjectMapper();
-//        String userid="2016302580188";
-//        String json=mapper.writeValueAsString(userid);
-//        System.out.println("before--------------------post");
-//        System.out.println(json.toString());
-//        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryGoodsByName").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
-//        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-//        System.out.println("after---------------------post");
-//        String result = mvcResult.getResponse().getContentAsString();
-//        System.out.println("==========结果为：==========\n" + result + "\n");
+    public void testqueryUserCollectionGoods() throws Exception {
+        ObjectMapper mapper=new ObjectMapper();
+        String userid="2016302580189";
+        String json=mapper.writeValueAsString(userid);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserCollectionGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //未测试
+    //已测试  成功通过
     @Test
     public void testqueryUserPublishGoods() throws Exception {
-//        ObjectMapper mapper=new ObjectMapper();
-//        String userid="2016302580188";
-//        String json=mapper.writeValueAsString(userid);
-//        System.out.println("before--------------------post");
-//        System.out.println(json.toString());
-//        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
-//        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-//        System.out.println("after---------------------post");
-//        String result = mvcResult.getResponse().getContentAsString();
-//        System.out.println("==========结果为：==========\n" + result + "\n");
+        ObjectMapper mapper=new ObjectMapper();
+        String userid="2016302580188";
+        String json=mapper.writeValueAsString(userid);
+        System.out.println("before--------------------post");
+        System.out.println(json.toString());
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Goods/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+        System.out.println("after---------------------post");
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testqueryGoodsById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -100,11 +110,11 @@ public class GoodsControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testdeleteGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        String goodsid="10001";
+        String goodsid="10003";
         String json=mapper.writeValueAsString(goodsid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
@@ -115,15 +125,15 @@ public class GoodsControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testaddGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Goods goods=new Goods();
-        goods.setGoodsid(10001);
-        goods.setUserid("2016302580188");
+        goods.setGoodsid(10003);
+        goods.setUserid("2016302580190");
         goods.setCover(".....");
-        goods.setName("goods2");
+        goods.setName("190goods1");
         goods.setPrice(100);
         String json=mapper.writeValueAsString(goods);
         System.out.println("before--------------------post");
@@ -136,7 +146,7 @@ public class GoodsControllerTest {
 
     }
 
-    //已测试
+    //已测试 成功通过
     @Test
     public void testupdateGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
