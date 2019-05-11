@@ -76,7 +76,7 @@ public class GoodsDetailsControllerTest {
         String json=mapper.writeValueAsString(goodsDetails);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/GoodsDetails/queryUserPublishGoods").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/GoodsDetails/updateGoodsDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();

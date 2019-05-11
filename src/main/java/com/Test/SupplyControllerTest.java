@@ -179,7 +179,7 @@ public class SupplyControllerTest {
         System.out.println("==========结果为：==========\n" + result + "\n");
     }
 
-    //未测试
+    //已测试 成功通过
     @Test
     public void testquerySupplyDetails() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
@@ -187,7 +187,7 @@ public class SupplyControllerTest {
         String json=mapper.writeValueAsString(supplyid);
         System.out.println("before----------------post");
         System.out.println(json.toString());
-        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/queryUserPublishSupply").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
+        ResultActions action = mockMvc.perform(MockMvcRequestBuilders.post("http://127.0.0.1:8080/Supply/querySupplyDetails").contentType("application/json;charset=UTF-8").content(json).accept(MediaType.APPLICATION_JSON));
         MvcResult mvcResult = action.andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         System.out.println("after---------------------post");
         String result = mvcResult.getResponse().getContentAsString();

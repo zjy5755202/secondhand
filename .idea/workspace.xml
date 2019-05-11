@@ -11,13 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef481bc2-441a-40b3-bee3-6aac92b2a2cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/SocketToPython.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/SocketToPython.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/SocketToPython1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/temp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,82 +45,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyCollectionControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-104">
+              <caret line="75" column="60" lean-forward="true" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="68" column="58" lean-forward="true" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="66" column="72" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="72" />
+            <state relative-caret-position="29">
+              <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,10 +75,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsCollectionController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="34" selection-start-line="34" selection-end-line="36" selection-end-column="53" />
+            <state relative-caret-position="333">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3496">
+              <caret line="184" column="47" lean-forward="true" selection-start-line="184" selection-start-column="47" selection-end-line="184" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="117" column="40" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,25 +178,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/GoodsDetailsDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/GoodsDetailsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyCollectionControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyCollection.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/SupplyDetailsDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/impl/SupplyDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/SupplyDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/util/SocketToPython1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/util/SocketToPython.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java" />
       </list>
     </option>
   </component>
@@ -284,6 +258,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,6 +309,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="secondhand" type="b2602c69:ProjectViewProjectNode" />
+              <item name="softwarePro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -364,14 +349,20 @@
               <item name="softwarePro" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="secondhand" type="b2602c69:ProjectViewProjectNode" />
+              <item name="softwarePro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,8 +416,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTest.testoutLogin">
-    <configuration name="SupplyControllerTest.testquerySupplyByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SupplyControllerTest.testquerySupplyDetails">
+    <configuration name="SupplyControllerTest.testquerySupplyDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarePro" />
       <extension name="coverage">
         <pattern>
@@ -436,7 +427,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.Test" />
       <option name="MAIN_CLASS_NAME" value="com.Test.SupplyControllerTest" />
-      <option name="METHOD_NAME" value="testquerySupplyByTitle" />
+      <option name="METHOD_NAME" value="testquerySupplyDetails" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -458,7 +449,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SupplyDetailControllerTest.testdeleteGoodsDetailsById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarePro" />
       <extension name="coverage">
         <pattern>
@@ -467,14 +458,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.Test.UserControllerTest" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="MAIN_CLASS_NAME" value="com.Test.SupplyDetailControllerTest" />
+      <option name="METHOD_NAME" value="testdeleteGoodsDetailsById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testaddUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SupplyDetailControllerTest.testqueryGoodsDetailsById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarePro" />
       <extension name="coverage">
         <pattern>
@@ -483,14 +474,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.Test.UserControllerTest" />
-      <option name="METHOD_NAME" value="testaddUser" />
+      <option name="MAIN_CLASS_NAME" value="com.Test.SupplyDetailControllerTest" />
+      <option name="METHOD_NAME" value="testqueryGoodsDetailsById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testoutLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SupplyDetailControllerTest.testupdateGoodsDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarePro" />
       <extension name="coverage">
         <pattern>
@@ -499,8 +490,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.Test.UserControllerTest" />
-      <option name="METHOD_NAME" value="testoutLogin" />
+      <option name="MAIN_CLASS_NAME" value="com.Test.SupplyDetailControllerTest" />
+      <option name="METHOD_NAME" value="testupdateGoodsDetails" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -652,11 +643,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserControllerTest.testoutLogin" />
-        <item itemvalue="JUnit.UserControllerTest.testLogin" />
-        <item itemvalue="JUnit.UserControllerTest.testaddUser" />
+        <item itemvalue="JUnit.SupplyControllerTest.testquerySupplyDetails" />
+        <item itemvalue="JUnit.SupplyDetailControllerTest.testqueryGoodsDetailsById" />
         <item itemvalue="JUnit.SupplyDetailControllerTest.testaddSupplyDetails" />
-        <item itemvalue="JUnit.SupplyControllerTest.testquerySupplyByTitle" />
+        <item itemvalue="JUnit.SupplyDetailControllerTest.testdeleteGoodsDetailsById" />
+        <item itemvalue="JUnit.SupplyDetailControllerTest.testupdateGoodsDetails" />
       </list>
     </recent_temporary>
   </component>
@@ -706,43 +697,44 @@
       <workItem from="1557475253955" duration="5494000" />
       <workItem from="1557538263698" duration="12934000" />
       <workItem from="1557568007633" duration="5012000" />
+      <workItem from="1557590219282" duration="2072000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 02m 24s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testupdateGoodsDetails - 2019.05.12 at 00h 23m 31s.xml">
+      <configuration name="SupplyDetailControllerTest.testupdateGoodsDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 02m 41s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testupdateGoodsDetails - 2019.05.12 at 00h 24m 45s.xml">
+      <configuration name="SupplyDetailControllerTest.testupdateGoodsDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 08m 36s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testupdateGoodsDetails - 2019.05.12 at 00h 25m 25s.xml">
+      <configuration name="SupplyDetailControllerTest.testupdateGoodsDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 08m 48s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testupdateGoodsDetails - 2019.05.12 at 00h 26m 25s.xml">
+      <configuration name="SupplyDetailControllerTest.testupdateGoodsDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 11m 53s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testdeleteGoodsDetailsById - 2019.05.12 at 00h 27m 02s.xml">
+      <configuration name="SupplyDetailControllerTest.testdeleteGoodsDetailsById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testLogin - 2019.05.11 at 19h 12m 27s.xml">
-      <configuration name="UserControllerTest.testLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testaddSupplyDetails - 2019.05.12 at 00h 27m 22s.xml">
+      <configuration name="SupplyDetailControllerTest.testaddSupplyDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testoutLogin - 2019.05.11 at 19h 16m 40s.xml">
-      <configuration name="UserControllerTest.testoutLogin" configurationId="JUnit" />
+    <history-entry file="SupplyDetailControllerTest_testqueryGoodsDetailsById - 2019.05.12 at 00h 27m 54s.xml">
+      <configuration name="SupplyDetailControllerTest.testqueryGoodsDetailsById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testoutLogin - 2019.05.11 at 19h 17m 18s.xml">
-      <configuration name="UserControllerTest.testoutLogin" configurationId="JUnit" />
+    <history-entry file="SupplyControllerTest_testquerySupplyDetails - 2019.05.12 at 00h 29m 08s.xml">
+      <configuration name="SupplyControllerTest.testquerySupplyDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testoutLogin - 2019.05.11 at 19h 19m 03s.xml">
-      <configuration name="UserControllerTest.testoutLogin" configurationId="JUnit" />
+    <history-entry file="SupplyControllerTest_testquerySupplyDetails - 2019.05.12 at 00h 30m 24s.xml">
+      <configuration name="SupplyControllerTest.testquerySupplyDetails" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testoutLogin - 2019.05.11 at 19h 19m 51s.xml">
-      <configuration name="UserControllerTest.testoutLogin" configurationId="JUnit" />
+    <history-entry file="SupplyControllerTest_testquerySupplyDetails - 2019.05.12 at 00h 30m 50s.xml">
+      <configuration name="SupplyControllerTest.testquerySupplyDetails" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152935000" />
+    <option name="totallyTimeSpent" value="155007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -757,7 +749,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29157782" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24840085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -767,7 +759,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4977307" weight="0.39804772" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.66717094" weight="0.38611713" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.66717094" visible="true" weight="0.34273317" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8986384" weight="0.49566162" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -934,20 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/SupplyCollectionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/GoodsCollectionDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -980,16 +958,6 @@
         <state relative-caret-position="-2726" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/util/SocketToPython.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1017,13 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/util/temp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/util/temp.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/SupplyCollectionDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1156,58 +1118,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="25" selection-start-line="25" selection-end-line="28" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1984">
-          <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyCollection.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1218,38 +1132,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/SupplyDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/SupplyDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyCollectionControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1324,8 +1210,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="1121">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/SupplyCollectionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1334,38 +1230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="68" column="58" lean-forward="true" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state relative-caret-position="1290">
+          <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1374,7 +1240,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="437">
           <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1382,10 +1248,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="66" column="72" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="72" />
+        <state relative-caret-position="722">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1394,11 +1260,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsCollectionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="302">
           <caret line="34" selection-start-line="34" selection-end-line="36" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="66" column="72" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/SupplyDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="52" column="47" lean-forward="true" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="100" column="14" lean-forward="true" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-584">
+          <caret line="25" selection-start-line="25" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="117" column="40" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3496">
+          <caret line="184" column="47" lean-forward="true" selection-start-line="184" selection-start-column="47" selection-end-line="184" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyCollectionControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="75" column="60" lean-forward="true" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>

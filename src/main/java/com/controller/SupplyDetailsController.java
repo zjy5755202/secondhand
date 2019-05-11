@@ -37,7 +37,7 @@ public class SupplyDetailsController {
     @ResponseBody
     public void updateSupplyDetails(@RequestBody String jsonstr) throws IOException {
         SupplyDetails supplyDetails = JSON.parseObject(jsonstr, new TypeReference<SupplyDetails>() {});
-        supplyDetailsService.addSupplyDetails(supplyDetails);
+        supplyDetailsService.updateSupplyDetails(supplyDetails);
     }
 
     //代码完毕 未测试 待调试

@@ -6,8 +6,8 @@
 <mapper namespace="com.dao.SupplyDetailsDao">
 
     <insert id="addSupplyDetails" parameterType="com.entity.SupplyDetails">
-        INSERT INTO supply_details(supplyid, images, description, collections, contact)
-        VALUES (#{supplyid}, #{images}, #{description}, #{collections},#{contact})
+        INSERT INTO supply_details(supplyid, images, description, collections, contact,createAt)
+        VALUES (#{supplyid}, #{images}, #{description}, #{collections},#{contact},NOW())
     </insert>
 
     <delete id="deleteSupplyDetailsById" parameterType="int">
@@ -21,6 +21,7 @@
         description = #{description},
         collections = #{collections},
         contact = #{contact}
+        WHERE supplyid = #{supplyid}
     </update>
 
     <select id="querySupplyDetailsById" parameterType="int" resultType="com.entity.SupplyDetails">
