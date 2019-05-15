@@ -32,8 +32,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryOwner(int goodsid) {
-        return userDao.queryOwner(goodsid);
+    public User queryGoodsOwner(int goodsid) {
+        return userDao.queryGoodsOwner(goodsid);
+    }
+
+    @Override
+    public User querySupplyOwner(int supplyid) {
+        return userDao.querySupplyOwner(supplyid);
     }
 
 }

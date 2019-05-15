@@ -6,7 +6,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.GoodsDetails;
 import com.entity.SupplyDetails;
+import com.entity.User;
 import com.service.SupplyDetailsService;
+import com.service.UserService;
 import com.util.UUIDGenerrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,9 @@ public class SupplyDetailsController {
 
     @Autowired
     private SupplyDetailsService supplyDetailsService;
+
+    @Autowired
+    private UserService userService;
 
     private String supplyDetailImgPath = "./img/SupplyDetail";
     //分隔img里可能的多个图片
@@ -54,6 +59,9 @@ public class SupplyDetailsController {
     public  SupplyDetails querySupplyDetailsByid(@RequestBody String jsonstr) throws IOException {
         int supplyid=Integer.parseInt((String)JSON.parse(jsonstr));
         SupplyDetails result=supplyDetailsService.querySupplyDetailsById(supplyid);
+        User owner=userService.querySupplyOwner(supplyid);
+        result.setOwneravatar(owner.getAvatar());
+        result.setOwnernickname(owner.getNickname());
         return result;
     }
 

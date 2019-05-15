@@ -77,7 +77,7 @@ public class GoodsDetailsController {
     public GoodsDetails queryGoodsDetailsByid(@RequestBody String jsonstr) throws IOException {
         int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
         GoodsDetails result=goodsDetailsService.queryGoodsDetailsById(goodsid);
-        User owner=userService.queryOwner(goodsid);
+        User owner=userService.queryGoodsOwner(goodsid);
         result.setOwneravatar(owner.getAvatar());
         result.setOwnernickname(owner.getNickname());
         return result;

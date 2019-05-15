@@ -10,5 +10,7 @@ public interface UserDao {
     //查找
     User queryUserById(String id);
     //查找拥有者
-    User queryOwner(int goodsid);
+    User queryGoodsOwner(int goodsid);
+    //查找拥有者
+    User querySupplyOwner(int supplyid);
 }

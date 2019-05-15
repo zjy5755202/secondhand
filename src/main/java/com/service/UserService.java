@@ -12,6 +12,8 @@ public interface UserService {
     //查找
     User queryById(String id);
     //查找
-    User queryOwner(int goodsid);
+    User queryGoodsOwner(int goodsid);
+    //查找
+    User querySupplyOwner(int supplyid);
 
 }

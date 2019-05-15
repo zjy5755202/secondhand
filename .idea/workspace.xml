@@ -11,26 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef481bc2-441a-40b3-bee3-6aac92b2a2cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/GoodsDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/GoodsDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Test/GoodsDetailsControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Test/GoodsDetailsControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/GoodsDetailsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/GoodsDetailsController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/GoodsDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/GoodsDetailsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entity/GoodsDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entity/GoodsDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,48 +46,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1463">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="136" column="25" lean-forward="true" selection-end-line="187" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="665">
+              <caret line="35" column="65" lean-forward="true" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/GoodsDetailsServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
-              <folding>
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#941#942#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -152,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dao/SupplyDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Goods.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Supply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/GoodsCollectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java" />
@@ -173,19 +131,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyDetailControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SupplyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/GoodsDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
       </list>
     </option>
   </component>
@@ -235,7 +194,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="170" />
     <option name="y" value="91" />
     <option name="width" value="1026" />
@@ -247,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,6 +323,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -761,6 +720,7 @@
       <workItem from="1557795508426" duration="679000" />
       <workItem from="1557836376179" duration="2509000" />
       <workItem from="1557842429213" duration="262000" />
+      <workItem from="1557895262554" duration="1037000" />
     </task>
     <servers />
   </component>
@@ -797,7 +757,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159270000" />
+    <option name="totallyTimeSpent" value="160307000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -812,7 +772,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25906184" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26172706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -903,13 +863,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>94</line>
+          <line>126</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>92</line>
+          <line>99</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -921,7 +881,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java</url>
-          <line>110</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
@@ -933,19 +893,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java</url>
-          <line>86</line>
+          <line>95</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java</url>
-          <line>58</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java</url>
-          <line>73</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
@@ -957,19 +917,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>61</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>62</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>51</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
@@ -1056,13 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsCollection.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/GoodsDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1074,13 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/SupplyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1163,19 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1121">
@@ -1190,16 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1239,16 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="52" column="47" lean-forward="true" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SupplyDetailsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1270,13 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/SupplyControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3059">
@@ -1291,16 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1197">
           <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,70 +1230,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/GoodsDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1575#1576#0" expanded="true" />
-            <element signature="e#1625#1626#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/SupplyDetailsDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1411,13 +1247,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1482">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>
@@ -1432,20 +1265,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsDetailsControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="136" column="25" lean-forward="true" selection-end-line="187" />
+          <caret line="136" column="25" selection-end-line="187" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyCollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2223">
+          <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/SupplyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/GoodsDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" selection-start-line="13" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1575#1576#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/SupplyDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+          <folding>
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1559#1560#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SupplyDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/GoodsDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/GoodsCollectionControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsCollection.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="65" lean-forward="true" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
         </state>
       </provider>
     </entry>
