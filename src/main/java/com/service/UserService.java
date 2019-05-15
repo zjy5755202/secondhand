@@ -11,5 +11,7 @@ public interface UserService {
     int updateUser(User user);
     //查找
     User queryById(String id);
+    //查找
+    User queryOwner(int goodsid);
 
 }

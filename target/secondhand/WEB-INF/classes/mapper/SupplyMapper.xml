@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SupplyDao">
+    <select id="querySupplyByTime" resultType="com.entity.Supply" >
+        SELECT *
+        FROM supply ss
+        WHERE TO_DAYS( NOW( ) ) - TO_DAYS( ss.createAt) &lt;= 7
+        ORDER BY createAt
+    </select>
+
+    <select id="querySupplyByTitle" resultType="com.entity.Supply" parameterType="java.lang.String">
+    SELECT *
+    FROM supply
+    WHERE title like CONCAT('%',#{name},'%')
+    </select>
+
+
+    <select id="queryUserCollectionSupply" resultType="com.entity.Supply" parameterType="java.lang.String">
+    SELECT *
+    FROM supply
+    WHERE supplyid IN
+    (SELECT supplyid FROM user_supply_collections where userid = #{userid} )
+    </select>
+
+    <!--    //查看某个用户发布的Goods-->
+    <!--    List<Goods> queryUserPublishGoods(String username);-->
+    <select id="queryUserPublishSupply" resultType="com.entity.Supply" parameterType="java.lang.String">
+    SELECT *
+    FROM supply
+    WHERE userid=#{userid}
+    </select>
+
+    <select id="querySupplyById" parameterType="String" resultType="Supply">
+        SELECT *
+        FROM Supply
+        WHERE supplyid = #{supplyid}
+    </select>
+
+    <delete id="deleteSupply" parameterType="String">
+        DELETE FROM supply
+        WHERE supplyid = #{supplyid}
+    </delete>
+
+    <insert id="addSupply" parameterType="Supply">
+        INSERT INTO supply(supplyid, userid, cover, title, price, createAt,expires)
+        VALUES (#{supplyid}, #{userid}, #{cover}, #{title}, #{price},now(),#{expires})
+    </insert>
+
+    <update id="updateSupply" parameterType="Supply">
+        UPDATE supply SET
+        cover = #{cover},
+        title = #{title},
+        price = #{price},
+        expires = #{expires}
+        WHERE supplyid = #{supplyid} AND userid=#{userid}
+    </update>
+
+    <select id="querySupplyDetails" resultType="com.entity.SupplyDetails" parameterType="java.lang.String">
+    SELECT *
+    FROM supply_details
+    WHERE supplyid=#{supplyid}
+    </select>
+
+
+</mapper>

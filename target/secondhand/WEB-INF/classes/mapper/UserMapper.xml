@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserDao">
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO users(userid,avatar,nickname,name,gender,grade,school,major)
+        VALUES (#{userid},#{avatar}, #{nickname}, #{name}, #{gender},#{grade},#{school},#{major})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE users
+        SET avatar = #{avatar},nickname = #{nickname},grade = #{grade},school=#{school},major=#{major}
+        WHERE  userid = #{userid}
+    </update>
+
+    <select id="queryUserById" resultType="User" parameterType="java.lang.String">
+        SELECT *
+        FROM users
+        WHERE userid=#{userid}
+    </select>
+
+</mapper>

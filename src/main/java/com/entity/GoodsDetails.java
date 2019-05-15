@@ -11,6 +11,8 @@ public class GoodsDetails {
     private int collections;
     private String contact;
     private Timestamp createAt;
+    private String owneravatar;
+    private String ownernickname;
 
     public int getGoodsid() {
         return goodsid;
@@ -59,5 +61,21 @@ public class GoodsDetails {
 
     public void setCreateAt(Timestamp createAt) {
         this.createAt = createAt;
+    }
+
+    public String getOwneravatar() {
+        return owneravatar;
+    }
+
+    public void setOwneravatar(String owneravatar) {
+        this.owneravatar = owneravatar;
+    }
+
+    public String getOwnernickname() {
+        return ownernickname;
+    }
+
+    public void setOwnernickname(String ownernickname) {
+        this.ownernickname = ownernickname;
     }
 }

@@ -31,4 +31,9 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUserById(id);
     }
 
+    @Override
+    public User queryOwner(int goodsid) {
+        return userDao.queryOwner(goodsid);
+    }
+
 }

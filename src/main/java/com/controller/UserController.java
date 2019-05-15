@@ -70,6 +70,7 @@ public class UserController {
         redis.del(useruuid);
     }
 
+
     //测试用
     @RequestMapping("/queryUser")
     public @ResponseBody User testqueryUserByid(@RequestBody String userid){

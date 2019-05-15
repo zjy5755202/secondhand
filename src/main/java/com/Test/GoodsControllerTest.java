@@ -130,10 +130,9 @@ public class GoodsControllerTest {
     public void testaddGoods() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
         Goods goods=new Goods();
-        goods.setGoodsid(10003);
-        goods.setUserid("2016302580190");
+        goods.setUserid("2016302580189");
         goods.setCover(".....");
-        goods.setName("190goods1");
+        goods.setName("test");
         goods.setPrice(100);
         String json=mapper.writeValueAsString(goods);
         System.out.println("before--------------------post");

@@ -22,4 +22,11 @@
         WHERE userid=#{userid}
     </select>
 
+    <select id="queryOwner" resultType="User" parameterType="int">
+        SELECT *
+        FROM users
+        WHERE userid =
+        (SELECT userid FROM goods where goodsid = #{goodsid} )
+    </select>
+
 </mapper>

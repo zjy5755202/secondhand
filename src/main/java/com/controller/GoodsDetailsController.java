@@ -4,7 +4,9 @@ package com.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.GoodsDetails;
+import com.entity.User;
 import com.service.GoodsDetailsService;
+import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +21,9 @@ public class GoodsDetailsController {
 
     @Autowired
     private GoodsDetailsService goodsDetailsService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/addGoodsDetails")
     @ResponseBody
@@ -63,8 +68,14 @@ public class GoodsDetailsController {
     public GoodsDetails queryGoodsDetailsByid(@RequestBody String jsonstr) throws IOException {
         int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
         GoodsDetails result=goodsDetailsService.queryGoodsDetailsById(goodsid);
+        User owner=userService.queryOwner(goodsid);
+        result.setOwneravatar(owner.getAvatar());
+        result.setOwnernickname(owner.getNickname());
         return result;
     }
+
+
+
     //代码完毕 未测试 待调试
     @RequestMapping("/deleteGoodsDetailsByid")
     @ResponseBody

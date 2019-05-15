@@ -9,4 +9,6 @@ public interface UserDao {
     int updateUser(User user);
     //查找
     User queryUserById(String id);
+    //查找拥有者
+    User queryOwner(int goodsid);
 }

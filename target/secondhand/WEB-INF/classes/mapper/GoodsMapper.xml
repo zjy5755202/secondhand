@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GoodsDao">
+    <!--首页加载所需goods-->
+    <select id="queryGoodsByTime" resultType="com.entity.Goods" >
+        SELECT *
+        FROM goods gg
+        WHERE TO_DAYS( NOW( ) ) - TO_DAYS( gg.createAt) &lt;= 7
+        ORDER BY createAt
+    </select>
+
+<!--//根据Title查询Goods-->
+<!--    List<Goods> queryGoodsByTitle(String title);-->
+    <select id="queryGoodsByName" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE name like CONCAT('%',#{name},'%')
+    </select>
+
+<!--    //查看某个用户收藏的Goods-->
+<!--    List<Goods> queryUserCollectionGoods(String username);-->
+    <select id="queryUserCollectionGoods" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE goodsid IN
+    (SELECT goodsid FROM user_goods_collections where userid = #{userid} )
+    </select>
+
+<!--    //查看某个用户发布的Goods-->
+<!--    List<Goods> queryUserPublishGoods(String username);-->
+    <select id="queryUserPublishGoods" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE userid=#{userid}
+    </select>
+
+
+    <select id="queryGoodsById" resultType="com.entity.Goods" parameterType="java.lang.String">
+    SELECT *
+    FROM goods
+    WHERE goodsid=#{goodsid}
+    </select>
+<!--    //删除一个Good-->
+<!--    void deleteGoods(String goodsid);-->
+    <delete id="deleteGoods" parameterType="java.lang.String">
+    DELETE
+    FROM goods
+    WHERE goodsid=#{goodsid}
+    </delete>
+
+<!--    //上传一个Good-->
+<!--    void addGoods(Goods goods);-->
+    <insert id="addGoods" parameterType="com.entity.Goods">
+    INSERT
+    INTO goods(goodsid,userid,cover,name,price,createAt)
+    VALUES (#{goodsid},#{userid},#{cover},#{name},#{price},now())
+    </insert>
+<!--    //更新一个Good-->
+<!--    void updateGoods(Goods goods);-->
+    <update id="updateGoods" parameterType="com.entity.Goods">
+    UPDATE goods
+    SET
+    cover=#{cover},
+    name=#{name},
+    price=#{price}
+    WHERE goodsid=#{goodsid} AND userid=#{userid}
+    </update>
+<!--    //点开查看详情的时候会调用的，查询这个good的remarks和Details-->
+<!--    Goods queryGoodsDetailsById(String goodsid);-->
+
+    <select id="queryGoodsDetailsById" resultType="com.entity.GoodsDetails" parameterType="java.lang.String">
+    SELECT *
+    FROM goods_details
+    WHERE goodsid=#{goodsid}
+    </select>
+
+</mapper>
