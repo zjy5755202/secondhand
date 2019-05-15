@@ -1,6 +1,7 @@
 package com.controller;
 
 
+import java.io.File;
 import java.io.IOException;
 
 import com.alibaba.fastjson.JSON;
@@ -14,6 +15,10 @@ import com.util.UUIDGenerrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 @Controller
@@ -23,6 +28,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private Redis redis;
+    //  用户头像文件夹
+    private String avatarPath = ".img/userAvatar";
 
     //代码完毕 待调试
     @RequestMapping("/checkLogin")
@@ -92,6 +99,31 @@ public class UserController {
         System.out.print(user);
         userService.addUser(user);
         return user;
+    }
+
+    /**修改用户头像
+     * @param request
+     * @param response
+     * @param avatar
+     * @throws IOException
+     */
+    @RequestMapping("/updateAvatar")
+    public void updateAvatar(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "avatar", required = false) MultipartFile avatar) throws IOException {
+        //判断图片文件是否存在
+        if (avatar != null){
+            String fileName = avatar.getOriginalFilename();
+            String type = fileName.indexOf(".") != -1 ? fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()) : null;
+            if ("GIF".equals(type.toUpperCase())||"PNG".equals(type.toUpperCase())||"JPG".equals(type.toUpperCase())) {
+                String path = avatarPath + '/' + UUIDGenerrator.getUUID() + '.' + type;
+                //保存头像文件
+                avatar.transferTo(new File(path));
+                String userUUID = request.getParameter("userUUID");
+                User user = userService.queryById(userUUID);
+                //更新数据库存储的路径
+                user.setAvatar(path);
+                userService.updateUser(user);
+            }
+        }
     }
 
 
