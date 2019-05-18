@@ -33,7 +33,7 @@ public class UserController {
 
     //代码完毕 待调试
     @RequestMapping("/checkLogin")
-    public @ResponseBody User checkLogin(@RequestBody String jsonstr) throws IOException {
+    public @ResponseBody JSONObject checkLogin(@RequestBody String jsonstr) throws IOException {
         //socket通信调用python 然后返回一个json格式的user数据
           User user;
           //System.out.println(jsonstr);
@@ -44,30 +44,30 @@ public class UserController {
           String password=user.getPassword();
           String param="id="+userid+"&password="+password;
           JSONObject object= SocketToPython.sendGet(param);
-          String state=object.getString("state");
-        //登陆失败
-        if(state=="false") {
-            return null;
-        }
+//          String state=object.getString("state");
+//        //登陆失败
+//        if(state=="false") {
+//            return null;
+//        }
         user=JSON.parseObject(object.get("data").toString(), new TypeReference<User>() {});
         user.setUserid(userid);
-//        user.setAvatar(avatar);
-//        user.setNickname(nickname);
-        user.setAvatar("localhost/temp/100");
-        user.setNickname("master");
+        user.setAvatar(avatar);
+        user.setNickname(nickname);
+//        user.setAvatar("localhost/temp/100");
+//        user.setNickname("master");
         //说明此用户是第一次使用我们的系统
         if(userService.queryById(user.getUserid())==null){
             userService.addUser(user);
         }else {
             userService.updateUser(user);
         }
-        //生成uuid 然后把uuid和username关联放到redis
-        String curUUID= UUIDGenerrator.getUUID();
-        System.out.println(curUUID);
-        redis.set(curUUID,user.getUserid());
-//        //然后把user的id设置为生成的那个uuid返回给前端
-        user.setUserid(curUUID);
-        return user;
+//        //生成uuid 然后把uuid和username关联放到redis
+//        String curUUID= UUIDGenerrator.getUUID();
+//        System.out.println(curUUID);
+//        redis.set(curUUID,user.getUserid());
+////        //然后把user的id设置为生成的那个uuid返回给前端
+//        user.setUserid(curUUID);
+        return object;
     }
 
     //代码完毕 待调试

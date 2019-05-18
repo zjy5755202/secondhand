@@ -30,8 +30,6 @@ public class GoodsCollectionController {
 //        String userid=redis.get(tempuserid);
 //        int goodsid=(int)object.get("goodsid");
 //        goodsCollectionService.Star(new GoodsCollection(userid,goodsid));
-
-
         //测试使用的代码
         GoodsCollection goodsCollection = JSON.parseObject(jsonstr, new TypeReference<GoodsCollection>() {});
         goodsCollectionService.Star(goodsCollection);
@@ -45,7 +43,6 @@ public class GoodsCollectionController {
 //        String userid=redis.get(tempuserid);
 //        int goodsid=(int)object.get("goodsid");
 //        goodsCollectionService.UnStar(new GoodsCollection(userid,goodsid));
-
         //测试使用代码
         GoodsCollection goodsCollection = JSON.parseObject(jsonstr, new TypeReference<GoodsCollection>() {});
         goodsCollectionService.UnStar(goodsCollection);

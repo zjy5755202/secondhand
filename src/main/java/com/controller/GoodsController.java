@@ -5,10 +5,10 @@ package com.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.Goods;
-import com.entity.GoodsDetails;
 import com.entity.User;
 import com.redis.Redis;
 import com.service.GoodsService;
+import com.service.UserService;
 import com.util.UUIDGenerrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,9 +31,14 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private Redis redis;
 
-    private String coverPath = "./img/GoodPath/";
+    private String coverPath ="D:\\softwarePro\\target\\secondhand\\goodsImg\\";
+
+
 
     //首页加载的时候按照时间来挑选一定的goods
     @RequestMapping("/queryGoodsByTime")
@@ -62,7 +67,6 @@ public class GoodsController {
 //        String userid=redis.get(tempuserid);
 //        List<Goods> result=goodsService.queryUserCollectionGoods(userid);
 //        return result;
-
         //测试使用
         String userid=(String)JSON.parse(jsonstr);
         List<Goods> result=goodsService.queryUserCollectionGoods(userid);
@@ -78,7 +82,6 @@ public class GoodsController {
 //        String userid=redis.get(tempuserid);
 //        List<Goods> result=goodsService.queryUserPublishGoods(userid);
 //        return result;
-
         //测试使用
         String userid=(String)JSON.parse(jsonstr);
         List<Goods> result=goodsService.queryUserPublishGoods(userid);
@@ -91,8 +94,12 @@ public class GoodsController {
     @RequestMapping("/queryGoodsById")
     @ResponseBody
     public Goods queryGoodsById(@RequestBody String jsonstr){
-        String goodsid=(String)JSON.parse(jsonstr);
+        int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
         Goods result=goodsService.queryGoodsById(goodsid);
+        User owner = userService.queryGoodsOwner(goodsid);
+        result.setContact(owner.getContact());
+        result.setOwneravatar(owner.getAvatar());
+        result.setOwnernickname(owner.getNickname());
         return result;
     }
 
@@ -101,7 +108,7 @@ public class GoodsController {
     @RequestMapping("/deleteGoods")
     @ResponseBody
     public void deleteGoods(@RequestBody String jsonstr){
-        String goodsid=(String)JSON.parse(jsonstr);
+        int goodsid=Integer.parseInt((String)JSON.parse(jsonstr));
         goodsService.deleteGoods(goodsid);
     }
 
@@ -109,9 +116,10 @@ public class GoodsController {
     //代码完毕 已测试 待调试
     @RequestMapping("/addGoods")
     @ResponseBody
-    public void addGoods(@RequestBody String jsonstr){
+    public int addGoods(@RequestBody String jsonstr){
         Goods goods = JSON.parseObject(jsonstr, new TypeReference<Goods>() {});
         goodsService.addGoods(goods);
+        return goods.getGoodsid();
     }
 
     //更新一个Good
@@ -123,43 +131,50 @@ public class GoodsController {
         goodsService.updateGoods(goods);
     }
 
-    //点开查看详情的时候会调用的，查询这个goods的Details
-    //代码完毕 未测试 待调试
-    @RequestMapping("/queryGoodsDetails")
-    @ResponseBody
-    public Goods queryGoodsDetails(@RequestBody String jsonstr){
-        String goodsid=(String)JSON.parse(jsonstr);
-        GoodsDetails goodsDetails=goodsService.queryGoodsDetailsById(goodsid);
-        Goods result=goodsService.queryGoodsById(goodsid);
-        result.setGoodsDetails(goodsDetails);
-        return result;
-    }
+//    //点开查看详情的时候会调用的，查询这个goods的Details
+//    //代码完毕 未测试 待调试
+//    @RequestMapping("/queryGoodsDetails")
+//    @ResponseBody
+//    public Goods queryGoodsDetails(@RequestBody String jsonstr){
+//        String goodsid=(String)JSON.parse(jsonstr);
+//        GoodsDetails goodsDetails=goodsService.queryGoodsDetailsById(goodsid);
+//        Goods result=goodsService.queryGoodsById(goodsid);
+//        result.setGoodsDetails(goodsDetails);
+//        return result;
+//    }
 
 
     /**商品封面改变
      * @param request
-     * @param response
      * @param cover 封面图片文件
      * @throws IOException
      */
     @RequestMapping("/updateCover")
-    public void updateCover(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "cover", required = false) MultipartFile cover) throws IOException {
+    @ResponseBody
+    public void updateCover(HttpServletRequest request, MultipartFile cover) throws IOException {
         //判断图片文件是否存在
+        File dir = new File(coverPath);
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
         if (cover != null){
             String fileName = cover.getOriginalFilename();
             String type = fileName.indexOf(".") != -1 ? fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()) : null;
             if ("GIF".equals(type.toUpperCase())||"PNG".equals(type.toUpperCase())||"JPG".equals(type.toUpperCase())) {
-                String path = coverPath + '/' + UUIDGenerrator.getUUID() + '.' + type;
+
+                String newfileName =  UUIDGenerrator.getUUID() + '.' + type;
+                String path = coverPath + newfileName;
                 //保存头像文件
                 cover.transferTo(new File(path));
-                String goodUUID = request.getParameter("goodUUID");
+                int goodUUID = Integer.parseInt(request.getParameter("goodUUID"));
                 Goods good = goodsService.queryGoodsById(goodUUID);
                 //更新数据库存储的路径
-                good.setCover(path);
+                good.setCover("goodsImg/"+newfileName);
                 goodsService.updateGoods(good);
             }
         }
     }
+
 
 
 }

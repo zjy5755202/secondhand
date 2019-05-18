@@ -1,8 +1,6 @@
 package com.service;
 
 import com.entity.Goods;
-import com.entity.GoodsDetails;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -16,13 +14,13 @@ public interface GoodsService {
     //查看某个用户发布的Goods
      List<Goods> queryUserPublishGoods(String username);
     //根据goodid来搜索Good
-    Goods queryGoodsById(String goodid);
+    Goods queryGoodsById(int goodsid);
     //删除一个Good
-     void deleteGoods(String goodid);
+     void deleteGoods(int goodsid);
     //上传一个Good
      void addGoods(Goods good);
     //更新一个Good
      void updateGoods(Goods good);
-    //点开查看详情的时候会调用的，查询这个good的remarks和Details
-    GoodsDetails queryGoodsDetailsById(String goodid);
+//    //点开查看详情的时候会调用的，查询这个good的remarks和Details
+//    GoodsDetails queryGoodsDetailsById(String goodid);
 }

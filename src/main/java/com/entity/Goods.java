@@ -16,8 +16,15 @@ public class Goods {
     private double price;
     //发布时间
     private Timestamp createAt;
-    //该商品的详情
-    private GoodsDetails goodsDetails;
+
+    //改动
+    private String owneravatar;
+    private String ownernickname;
+    private String contact;
+    private int collections;
+
+//    //该商品的详情
+//    private GoodsDetails goodsDetails;
 
     public int getGoodsid() {
         return goodsid;
@@ -67,11 +74,42 @@ public class Goods {
         this.createAt = createAt;
     }
 
-    public GoodsDetails getGoodsDetails() {
-        return goodsDetails;
+    public String getOwneravatar() {
+        return owneravatar;
     }
 
-    public void setGoodsDetails(GoodsDetails goodsDetails) {
-        this.goodsDetails = goodsDetails;
+    public void setOwneravatar(String owneravatar) {
+        this.owneravatar = owneravatar;
     }
+
+    public String getOwnernickname() {
+        return ownernickname;
+    }
+
+    public void setOwnernickname(String ownernickname) {
+        this.ownernickname = ownernickname;
+    }
+
+    public int getCollections() {
+        return collections;
+    }
+
+    public void setCollections(int collections) {
+        this.collections = collections;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+    //    public GoodsDetails getGoodsDetails() {
+//        return goodsDetails;
+//    }
+//
+//    public void setGoodsDetails(GoodsDetails goodsDetails) {
+//        this.goodsDetails = goodsDetails;
+//    }
 }

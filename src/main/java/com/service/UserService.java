@@ -15,5 +15,4 @@ public interface UserService {
     User queryGoodsOwner(int goodsid);
     //查找
     User querySupplyOwner(int supplyid);
-
 }

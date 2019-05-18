@@ -6,9 +6,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.entity.Goods;
 import com.entity.Supply;
-import com.entity.SupplyDetails;
+import com.entity.User;
 import com.redis.Redis;
 import com.service.SupplyService;
+import com.service.UserService;
 import com.util.UUIDGenerrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,9 +32,11 @@ public class SupplyController {
     @Autowired
     private SupplyService supplyService;
     @Autowired
+    private UserService userService;
+    @Autowired
     private Redis redis;
 
-    private String coverPath = "./img/SupplyCover";
+    private String coverPath ="D:\\softwarePro\\target\\secondhand\\supplyImg\\";
 
 
     //首页加载所需要的Supply
@@ -92,15 +95,20 @@ public class SupplyController {
     @RequestMapping("/querySupplyById")
     @ResponseBody
     public Supply querySupplyById(@RequestBody String jsonstr){
-        String supplyid=(String)JSON.parse(jsonstr);
-        return supplyService.querySupplyById(supplyid);
+        int supplyid=Integer.parseInt((String)JSON.parse(jsonstr));
+        Supply result=supplyService.querySupplyById(supplyid);
+        User owner = userService.queryGoodsOwner(supplyid);
+        result.setContact(owner.getContact());
+        result.setOwneravatar(owner.getAvatar());
+        result.setOwnernickname(owner.getNickname());
+        return result;
     }
     //删除某个supply
     //代码完毕 已测试 待调试
     @RequestMapping("/deleteSupply")
     @ResponseBody
     public void deleteSupply(@RequestBody String jsonstr){
-        String supplyid=(String)JSON.parse(jsonstr);
+        int supplyid=Integer.parseInt((String)JSON.parse(jsonstr));
         supplyService.deleteSupply(supplyid);
     }
     //增加一个supply
@@ -123,38 +131,38 @@ public class SupplyController {
     }
 
 
-    //点开查看详情的时候会调用的，查询这个goods的Details
-    //代码完毕 未测试 待调试
-    @RequestMapping("/querySupplyDetails")
-    @ResponseBody
-    public Supply querySupplyDetails(@RequestBody String jsonstr){
-        String supplyid=(String)JSON.parse(jsonstr);
-        SupplyDetails supplyDetails=supplyService.querySupplyDetails(supplyid);
-        Supply result=supplyService.querySupplyById(supplyid);
-        result.setSupplyDetails(supplyDetails);
-        return result;
-    }
+//    //点开查看详情的时候会调用的，查询这个goods的Details
+//    //代码完毕 未测试 待调试
+//    @RequestMapping("/querySupplyDetails")
+//    @ResponseBody
+//    public Supply querySupplyDetails(@RequestBody String jsonstr){
+//        String supplyid=(String)JSON.parse(jsonstr);
+//        SupplyDetails supplyDetails=supplyService.querySupplyDetails(supplyid);
+//        Supply result=supplyService.querySupplyById(supplyid);
+//        result.setSupplyDetails(supplyDetails);
+//        return result;
+//    }
 
-    /**修改供需封面
-     * @param request
-     * @param response
-     * @param cover 封面图片文件
-     * @throws IOException
-     */
     @RequestMapping("/updateCover")
-    public void updateCover(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "cover", required = false) MultipartFile cover) throws IOException {
+    @ResponseBody
+    public void updateCover(HttpServletRequest request, MultipartFile cover) throws IOException {
         //判断图片文件是否存在
+        File dir = new File(coverPath);
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
         if (cover != null){
             String fileName = cover.getOriginalFilename();
             String type = fileName.indexOf(".") != -1 ? fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()) : null;
             if ("GIF".equals(type.toUpperCase())||"PNG".equals(type.toUpperCase())||"JPG".equals(type.toUpperCase())) {
-                String path = coverPath + '/' + UUIDGenerrator.getUUID() + '.' + type;
+                String newfileName =  UUIDGenerrator.getUUID() + '.' + type;
+                String path = coverPath + newfileName;
                 //保存头像文件
                 cover.transferTo(new File(path));
-                String supplyUUID = request.getParameter("supplyUUID");
+                int supplyUUID = Integer.parseInt(request.getParameter("supplyUUID"));
                 Supply supply = supplyService.querySupplyById(supplyUUID);
                 //更新数据库存储的路径
-                supply.setCover(path);
+                supply.setCover("supplyImg\\"+path);
                 supplyService.updateSupply(supply);
             }
         }

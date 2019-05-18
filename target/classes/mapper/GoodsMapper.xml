@@ -38,14 +38,14 @@
     </select>
 
 
-    <select id="queryGoodsById" resultType="com.entity.Goods" parameterType="java.lang.String">
+    <select id="queryGoodsById" resultType="com.entity.Goods" parameterType="Integer">
     SELECT *
     FROM goods
     WHERE goodsid=#{goodsid}
     </select>
 <!--    //删除一个Good-->
 <!--    void deleteGoods(String goodsid);-->
-    <delete id="deleteGoods" parameterType="java.lang.String">
+    <delete id="deleteGoods" parameterType="Integer">
     DELETE
     FROM goods
     WHERE goodsid=#{goodsid}
@@ -54,9 +54,13 @@
 <!--    //上传一个Good-->
 <!--    void addGoods(Goods goods);-->
     <insert id="addGoods" parameterType="com.entity.Goods">
+        <selectKey keyProperty="goodsid" order="AFTER" resultType="java.lang.Integer">
+            <!-- SELECT LAST_INSERT_ID()：得到刚insert到数据表中的记录的主键值，只适用于自增主键 -->
+            SELECT LAST_INSERT_ID()
+        </selectKey>
     INSERT
-    INTO goods(goodsid,userid,cover,name,price,createAt)
-    VALUES (#{goodsid},#{userid},#{cover},#{name},#{price},now())
+    INTO goods(goodsid,userid,cover,name,price,collections,createAt)
+    VALUES (#{goodsid},#{userid},#{cover},#{name},#{price},0,now())
     </insert>
 <!--    //更新一个Good-->
 <!--    void updateGoods(Goods goods);-->
@@ -71,10 +75,10 @@
 <!--    //点开查看详情的时候会调用的，查询这个good的remarks和Details-->
 <!--    Goods queryGoodsDetailsById(String goodsid);-->
 
-    <select id="queryGoodsDetailsById" resultType="com.entity.GoodsDetails" parameterType="java.lang.String">
-    SELECT *
-    FROM goods_details
-    WHERE goodsid=#{goodsid}
-    </select>
+<!--    <select id="queryGoodsDetailsById" resultType="com.entity.GoodsDetails" parameterType="java.lang.String">-->
+<!--    SELECT *-->
+<!--    FROM goods_details-->
+<!--    WHERE goodsid=#{goodsid}-->
+<!--    </select>-->
 
 </mapper>

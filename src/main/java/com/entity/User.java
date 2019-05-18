@@ -19,6 +19,8 @@ public class User {
     private String major;
     //密码
     private String password;
+    //联系方式
+    private String contact;
 
     public String getUserid() {
         return userid;
@@ -90,5 +92,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

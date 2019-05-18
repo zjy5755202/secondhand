@@ -6,13 +6,13 @@
 <mapper namespace="com.dao.UserDao">
 
     <insert id="addUser" parameterType="User">
-        INSERT INTO users(userid,avatar,nickname,name,gender,grade,school,major)
-        VALUES (#{userid},#{avatar}, #{nickname}, #{name}, #{gender},#{grade},#{school},#{major})
+        INSERT INTO users(userid,avatar,nickname,name,gender,grade,school,major,contact)
+        VALUES (#{userid},#{avatar}, #{nickname}, #{name}, #{gender},#{grade},#{school},#{major},null )
     </insert>
 
     <update id="updateUser" parameterType="User">
         UPDATE users
-        SET avatar = #{avatar},nickname = #{nickname},grade = #{grade},school=#{school},major=#{major}
+        SET avatar = #{avatar},nickname = #{nickname},grade = #{grade},school=#{school},major=#{major},contact=#{contact}
         WHERE  userid = #{userid}
     </update>
 
@@ -20,6 +20,20 @@
         SELECT *
         FROM users
         WHERE userid=#{userid}
+    </select>
+
+    <select id="queryGoodsOwner" resultType="User" parameterType="int">
+        SELECT *
+        FROM users
+        WHERE userid =
+        (SELECT userid FROM goods where goodsid = #{goodsid} )
+    </select>
+
+    <select id="querySupplyOwner" resultType="User" parameterType="int">
+        SELECT *
+        FROM users
+        WHERE userid =
+        (SELECT userid FROM supply where supplyid = #{supplyid} )
     </select>
 
 </mapper>

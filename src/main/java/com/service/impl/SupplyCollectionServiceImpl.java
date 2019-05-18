@@ -1,6 +1,5 @@
 package com.service.impl;
 
-import com.dao.GoodsDetailsDao;
 import com.dao.SupplyCollectionDao;
 import com.entity.SupplyCollection;
 import com.service.SupplyCollectionService;

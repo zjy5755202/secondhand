@@ -18,8 +18,13 @@ public class Supply {
     private Timestamp createAt;
     //过期时间
     private Timestamp expires;
-    //该需求的详情
-    private SupplyDetails supplyDetails;
+
+    private int collections;
+    private String contact;
+    private String owneravatar;
+    private String ownernickname;
+//    //该需求的详情
+//    private SupplyDetails supplyDetails;
 
     public int getSupplyid() {
         return supplyid;
@@ -77,13 +82,45 @@ public class Supply {
         this.expires = expires;
     }
 
-    public SupplyDetails getSupplyDetails() {
-        return supplyDetails;
+    public int getCollections() {
+        return collections;
     }
 
-    public void setSupplyDetails(SupplyDetails supplyDetails) {
-        this.supplyDetails = supplyDetails;
+    public void setCollections(int collections) {
+        this.collections = collections;
     }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getOwneravatar() {
+        return owneravatar;
+    }
+
+    public void setOwneravatar(String owneravatar) {
+        this.owneravatar = owneravatar;
+    }
+
+    public String getOwnernickname() {
+        return ownernickname;
+    }
+
+    public void setOwnernickname(String ownernickname) {
+        this.ownernickname = ownernickname;
+    }
+
+    //    public SupplyDetails getSupplyDetails() {
+//        return supplyDetails;
+//    }
+//
+//    public void setSupplyDetails(SupplyDetails supplyDetails) {
+//        this.supplyDetails = supplyDetails;
+//    }
 
 
 }

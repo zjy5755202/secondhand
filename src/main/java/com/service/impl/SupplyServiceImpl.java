@@ -3,7 +3,6 @@ package com.service.impl;
 import com.dao.SupplyDao;
 import com.dao.UserDao;
 import com.entity.Supply;
-import com.entity.SupplyDetails;
 import com.entity.User;
 import com.service.SupplyService;
 import com.service.UserService;
@@ -43,13 +42,13 @@ public class SupplyServiceImpl implements SupplyService {
     }
 
     @Override
-    public Supply querySupplyById(String supplyid) {
+    public Supply querySupplyById(int supplyid) {
         Supply result=supplyDao.querySupplyById(supplyid);
         return result;
     }
 
     @Override
-    public void deleteSupply(String supplyid) {
+    public void deleteSupply(int supplyid) {
         supplyDao.deleteSupply(supplyid);
     }
 
@@ -63,9 +62,9 @@ public class SupplyServiceImpl implements SupplyService {
         supplyDao.updateSupply(supply);
     }
 
-    @Override
-    public SupplyDetails querySupplyDetails(String supplyid) {
-        SupplyDetails result=supplyDao.querySupplyDetails(supplyid);
-        return result;
-    }
+//    @Override
+//    public SupplyDetails querySupplyDetails(String supplyid) {
+//        SupplyDetails result=supplyDao.querySupplyDetails(supplyid);
+//        return result;
+//    }
 }

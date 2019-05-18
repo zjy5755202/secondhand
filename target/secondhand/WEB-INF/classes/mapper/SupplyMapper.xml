@@ -33,20 +33,23 @@
     WHERE userid=#{userid}
     </select>
 
-    <select id="querySupplyById" parameterType="String" resultType="Supply">
+    <select id="querySupplyById" parameterType="Integer" resultType="Supply">
         SELECT *
         FROM Supply
         WHERE supplyid = #{supplyid}
     </select>
 
-    <delete id="deleteSupply" parameterType="String">
+    <delete id="deleteSupply" parameterType="Integer">
         DELETE FROM supply
         WHERE supplyid = #{supplyid}
     </delete>
 
     <insert id="addSupply" parameterType="Supply">
-        INSERT INTO supply(supplyid, userid, cover, title, price, createAt,expires)
-        VALUES (#{supplyid}, #{userid}, #{cover}, #{title}, #{price},now(),#{expires})
+        <selectKey keyProperty="supplyid" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO supply(supplyid, userid, cover, title, price,collections, createAt,expires)
+        VALUES (#{supplyid}, #{userid}, #{cover}, #{title}, #{price},0,now(),now())
     </insert>
 
     <update id="updateSupply" parameterType="Supply">
@@ -58,11 +61,11 @@
         WHERE supplyid = #{supplyid} AND userid=#{userid}
     </update>
 
-    <select id="querySupplyDetails" resultType="com.entity.SupplyDetails" parameterType="java.lang.String">
-    SELECT *
-    FROM supply_details
-    WHERE supplyid=#{supplyid}
-    </select>
+<!--    <select id="querySupplyDetails" resultType="com.entity.SupplyDetails" parameterType="java.lang.String">-->
+<!--    SELECT *-->
+<!--    FROM supply_details-->
+<!--    WHERE supplyid=#{supplyid}-->
+<!--    </select>-->
 
 
 </mapper>

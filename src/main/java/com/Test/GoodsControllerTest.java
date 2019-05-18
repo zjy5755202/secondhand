@@ -2,7 +2,6 @@ package com.Test;
 
 import com.controller.GoodsController;
 import com.entity.Goods;
-import com.entity.GoodsDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -54,7 +53,7 @@ public class GoodsControllerTest {
     @Test
     public void testqueryGoodsByName() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        String name="goods";
+        String name="2";
         String json=mapper.writeValueAsString(name);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
@@ -99,7 +98,7 @@ public class GoodsControllerTest {
     @Test
     public void testqueryGoodsById() throws Exception {
         ObjectMapper mapper=new ObjectMapper();
-        String goodsid="10000";
+        String goodsid="1";
         String json=mapper.writeValueAsString(goodsid);
         System.out.println("before--------------------post");
         System.out.println(json.toString());
